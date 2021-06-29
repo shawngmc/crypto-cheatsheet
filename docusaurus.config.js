@@ -23,13 +23,13 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'common-commands',
+          docId: 'commands-intro',
           position: 'left',
           label: 'Common Commands',
         },
         {
           type: 'doc',
-          docId: 'reference-lists',
+          docId: 'lists-intro',
           position: 'left',
           label: 'Reference Lists',
         },

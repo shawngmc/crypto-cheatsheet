@@ -23,9 +23,15 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'intro',
+          docId: 'common-commands',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Common Commands',
+        },
+        {
+          type: 'doc',
+          docId: 'reference-lists',
+          position: 'left',
+          label: 'Reference Lists',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {

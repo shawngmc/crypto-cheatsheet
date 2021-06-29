@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Crypto Cheatsheet',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Cryptography doesn\'y need to be hard!',
   url: 'https://shawngmc.github.io',
   baseUrl: '/crypto-cheatsheet/',
   onBrokenLinks: 'throw',
@@ -17,7 +17,7 @@ module.exports = {
     navbar: {
       title: 'Crypto Cheatsheet',
       logo: {
-        alt: 'Crypto Cheatsheet Logo',
+        alt: 'Crypto Cheatsheet Key Logo',
         src: 'img/logo.svg',
       },
       items: [

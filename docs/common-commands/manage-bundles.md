@@ -9,11 +9,9 @@ sidebar_position: 2
 |---------------|--------------|-----------------------------|-----------------------------|
 | PEM(Nx) | PEM(1x) | Export via Split | Use a text editor and save new files for each BEGIN/END line pair |
 | PEM(Nx) | PEM(1x) | Cert-only csplit | ```csplit --prefix='cert.' --suffix-format='%03d.pem' multicert.pem '/-----BEGIN CERTIFICATE-----/' '{*}'``` |
-| PEM(Nx) | PEM(1x) | AWK Script | ```#!/usr/bin/awk -f
-#
-# Take a PEM format file as input and split out certs and keys into separate files
-#
-
+| PEM(Nx) | PEM(1x) | AWK Script | 
+<pre>
+#!/usr/bin/awk -f
 BEGIN                          { n=0; cert=0; key=0; if ( ARGC < 2 ) { print "Usage: pem-split FILENAME"; exit 1 } }
 /-----BEGIN PRIVATE KEY-----/  { key=1; cert=0 }
 /-----BEGIN CERTIFICATE-----/  { cert=1; key=0 }
@@ -21,7 +19,8 @@ split_after == 1               { n++; split_after=0 }
 /-----END CERTIFICATE-----/    { split_after=1 }
 /-----END PRIVATE KEY-----/    { split_after=1 }
 key == 1                       { print > FILENAME "-" n ".key" }
-cert == 1                      { print > FILENAME "-" n ".crt" }``` |
+cert == 1                      { print > FILENAME "-" n ".crt" }
+</pre> |
 | PEM(Nx) | DER | Export via Split | PEM -> PEM(1x) -> DER |
 | P12 | PEM(1x) | Export | P12 -> PEM -> PEM(1x) |
 | P12 | DER | Export | ```keytool -export -alias alias -file out.der -keystore store.p12``` |

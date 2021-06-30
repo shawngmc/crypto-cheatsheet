@@ -5,74 +5,27 @@ sidebar_position: 2
 # Manage Bundles
 
 ## Export from Bundle
-<table>
-    <th>
-        <td>From</td>
-        <td>To</td>
-        <td>Action</td>
-        <td>Command</td>
-    </th>
-    <tr>
-        <td>PEM(Nx)</td>
-        <td>PEM(1x)</td>
-        <td>Export via Split</td>
-        <td>Use a text editor and save new files for each BEGIN/END line pair</td>
-    </tr>
-    <tr>
-        <td>PEM(Nx)</td>
-        <td>PEM(1x)</td>
-        <td>Cert-only csplit</td>
-        <td>```csplit --prefix='cert.' --suffix-format='%03d.pem' multicert.pem '/-----BEGIN CERTIFICATE-----/' '{*}'```</td>
-    </tr>
-    <tr>
-        <td>PEM(Nx)</td>
-        <td>PEM(1x)</td>
-        <td>AWK Script</td>
-        <td>
-            <pre>
-            #!/usr/bin/awk -f
-            BEGIN                          { n=0; cert=0; key=0; if ( ARGC < 2 ) { print "Usage: pem-split FILENAME"; exit 1 } }
-            /-----BEGIN PRIVATE KEY-----/  { key=1; cert=0 }
-            /-----BEGIN CERTIFICATE-----/  { cert=1; key=0 }
-            split_after == 1               { n++; split_after=0 }
-            /-----END CERTIFICATE-----/    { split_after=1 }
-            /-----END PRIVATE KEY-----/    { split_after=1 }
-            key == 1                       { print > FILENAME "-" n ".key" }
-            cert == 1                      { print > FILENAME "-" n ".crt" }
-            </pre>
-        </td>
-    </tr>
-    <tr>
-        <td>PEM(Nx)</td>
-        <td>DER</td>
-        <td>Export via Split</td>
-        <td>PEM -> PEM(1x) -> DER</td>
-    </tr>
-    <tr>
-        <td>P12</td>
-        <td>PEM(1x)</td>
-        <td>Export</td>
-        <td>P12 -> PEM -> PEM(1x)</td>
-    </tr>
-    <tr>
-        <td>P12</td>
-        <td>DER</td>
-        <td>Export</td>
-        <td> ```keytool -export -alias alias -file out.der -keystore store.p12```</td>
-    </tr>
-    <tr>
-        <td>JKS</td>
-        <td>PEM(1x)</td>
-        <td>Export</td>
-        <td>JKS -> P12 -> PEM -> PEM(1x)</td>
-    </tr>
-    <tr>
-        <td>JKS</td>
-        <td>DER</td>
-        <td>Export</td>
-        <td>```keytool -export -alias alias -file out.der -keystore store.jks```</td>
-    </tr>
-</table>
+| From          | To             | Action                      | Command |
+|---------------|--------------|-----------------------------|-----------------------------|
+| PEM(Nx) | PEM(1x) | Export via Split | Use a text editor and save new files for each BEGIN/END line pair |
+| PEM(Nx) | PEM(1x) | Cert-only csplit | ```csplit --prefix='cert.' --suffix-format='%03d.pem' multicert.pem '/-----BEGIN CERTIFICATE-----/' '{*}'``` |
+| PEM(Nx) | PEM(1x) | AWK Script | 
+```
+#!/usr/bin/awk -f
+BEGIN                          { n=0; cert=0; key=0; if ( ARGC < 2 ) { print "Usage: pem-split FILENAME"; exit 1 } }
+/-----BEGIN PRIVATE KEY-----/  { key=1; cert=0 }
+/-----BEGIN CERTIFICATE-----/  { cert=1; key=0 }
+split_after == 1               { n++; split_after=0 }
+/-----END CERTIFICATE-----/    { split_after=1 }
+/-----END PRIVATE KEY-----/    { split_after=1 }
+key == 1                       { print > FILENAME "-" n ".key" }
+cert == 1                      { print > FILENAME "-" n ".crt" }
+``` |
+| PEM(Nx) | DER | Export via Split | PEM -> PEM(1x) -> DER |
+| P12 | PEM(1x) | Export | P12 -> PEM -> PEM(1x) |
+| P12 | DER | Export | ```keytool -export -alias alias -file out.der -keystore store.p12``` |
+| JKS | PEM(1x) | Export | JKS -> P12 -> PEM -> PEM(1x) |
+| JKS | DER | Export | ```keytool -export -alias alias -file out.der -keystore store.jks``` |
 			
 ## Import to Bundle			
 | From          | To             | Action                      | Command |

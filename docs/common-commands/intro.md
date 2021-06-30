@@ -2,6 +2,6 @@
 sidebar_position: 1
 ---
 
-# Commands Intro
+# Common Commands
 
 Here you can find commands for a variety of common encryption-related actions.

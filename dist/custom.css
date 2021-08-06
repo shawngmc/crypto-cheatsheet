@@ -1,0 +1,56 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.grid > nav {
+  grid-area: 1 / 1 / 2 / 2;
+  position: fixed;
+  padding: 5px;
+}
+
+.grid > nav > a {
+  font-size: 16pt;
+  display: block;
+  padding: 3px;
+}
+
+.grid > article {
+  grid-area: 1 / 2 / 2 / 3;
+  background-color: darkseagreen !important;
+  padding: 5px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: inherit;
+  width: auto;
+}
+
+.grid > article > section {
+  max-width: inherit;
+  width: auto;
+}
+
+.grid > article > section > figure {
+  max-width: inherit;
+  width: auto;
+}
+
+
+.grid > article > section > figure > table {
+  max-width: inherit;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.grid > article > section > figure > table > tbody > tr > td {
+  max-width: inherit;
+}

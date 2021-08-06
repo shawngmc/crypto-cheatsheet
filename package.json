@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.mjs",
+    "deploy": "aws s3 sync dist/ s3://cryptocheatsheet.ninja/ --acl public-read"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/shawngmc/crypto-cheatsheet#readme",
   "dependencies": {
     "jsdom": "^16.7.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.2"
   }
 }

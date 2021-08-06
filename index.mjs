@@ -40,11 +40,11 @@ config.sections.forEach((section) => {
     let figure = sectionDom.querySelector('figure');
     figure.appendChild(childTable);
     // Append Content Section
-    newDoc.querySelector('main').appendChild(newChildDom);
-
-    
+    newDoc.querySelector('article').appendChild(newChildDom);
 
     // Insert TOC entry
+    let newNav = JSDOM.fragment(`<a href="#${childId}">${section.title}</a><br>`);
+    newDoc.querySelector('nav').appendChild(newNav);
 })
 // Write HTML
 fs.writeFileSync('dist/index.html', newDom.serialize(), 'utf-8');

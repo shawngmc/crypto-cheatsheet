@@ -18,7 +18,6 @@ let config = JSON.parse(fs.readFileSync('config.json', 'utf-8'));
 let skeletonHtml = fs.readFileSync('templates/skeleton.html', 'utf-8');
 let newDom = new JSDOM(skeletonHtml);
 let newDoc = newDom.window.document;
-let sectionTemplateHtml = fs.readFileSync('templates/section-template.html', 'utf-8');
 
 let cleanTable = function(table) {
     // Remove existing headers
@@ -39,38 +38,63 @@ let cleanTable = function(table) {
         td.removeAttribute("dir");
     })
 
-    let header = JSDOM.fragment("<thead></thead>");
-
+    // TODO: Convert first row to header
+    let header = JSDOM.fragment("<thead><tr></tr></thead>");
+    let tableHeaderRow = header.querySelector('tr');
+    let topRow = tbody.querySelector('tr');
+    topRow.querySelectorAll('td').forEach((td) => {
+        tableHeaderRow.appendChild(JSDOM.fragment(`<th>${td.innerHTML}</th>`));
+    })
+    tbody.removeChild(topRow);
+    table.insertBefore(header, tbody);
 }
 
-config.sections.forEach((section) => {
-    console.log(`Building ${section.title}...`);
+config.articles.forEach((article) => {
+    console.log(`Building article ${article.title}...`);
+    // Create Article
+    let articleId = article.title.replace(" ", "-").toLowerCase();
+    let newArticle = JSDOM.fragment(`<article id="${articleId}"></article>`);
+    let articleElement = newArticle.querySelector('article');
 
-    // Read child doc
-    let childHtml = fs.readFileSync(`./raw-sheets/${section.filename}`, 'utf-8');
-    let childDom = JSDOM.fragment(childHtml);
-    let childTable = childDom.querySelector('table');
+    // Create Article Title
+    let newTitle = JSDOM.fragment(`<h1>${article.title}</h1>`);
+    articleElement.appendChild(newTitle);
 
-    cleanTable(childTable);
+    // Create Nav Section
+    let newArticleNav = JSDOM.fragment(`<li><div>${article.title}</div><ul></ul></li>`);
+    let newArticleChildNavs = newArticleNav.querySelector('ul');
 
-    // Prep Content Section
-    let childId = section.title.replace(" ", "-");
-    let newChildDom = JSDOM.fragment(sectionTemplateHtml);
-    let sectionDom = newChildDom.querySelector('section');
-    sectionDom.setAttribute('id', childId);
-    // Insert Header with Anchor
-    let header = sectionDom.querySelector('h1');
-    header.innerHTML = section.title;
-    // Insert table
-    let figure = sectionDom.querySelector('figure');
-    figure.appendChild(childTable);
-    // Append Content Section
-    newDoc.querySelector('article').appendChild(newChildDom);
+    // Go through sections
+    article.sections.forEach((section) => {
+        console.log(`Building section ${section.title}...`);
+    
+        // Read child doc
+        let childHtml = fs.readFileSync(`./raw-sheets/${section.filename}`, 'utf-8');
+        let childDom = JSDOM.fragment(childHtml);
+        let childTable = childDom.querySelector('table');
+    
+        cleanTable(childTable);
+    
+        // Build Content Section
+        let childId = section.title.replace(" ", "-");
+        let newSection = JSDOM.fragment(`<section id="${childId}"><h2>${section.title}</h2></section>`);
+        let sectionElement = newSection.querySelector('section');
+        sectionElement.appendChild(childTable);
 
-    // Insert TOC entry
-    let newNav = JSDOM.fragment(`<a href="#${childId}">${section.title}</a>`);
-    newDoc.querySelector('nav').appendChild(newNav);
+        // Insert Content Section
+        articleElement.appendChild(newSection);
+
+        // Insert TOC entry
+        let newNav = JSDOM.fragment(`<li><a href="#${childId}">${section.title}</a></li>`);
+        newArticleChildNavs.appendChild(newNav);
+    })
+
+    // Add to the main doc
+    newDoc.querySelector('ul').appendChild(newArticleNav);
+    newDoc.querySelector('main').appendChild(newArticle);
 })
+
+
 // Write HTML
 fs.writeFileSync('dist/index.html', newDom.serialize(), 'utf-8');
 

@@ -1,26 +1,138 @@
 {
-    "sections": [
+  "articles": [
+    {
+      "title": "Commands",
+      "sections": [
         {
-            "title": "File Types",
-            "filename": "File Types.html"
+          "title": "View Single Cert or Key",
+          "filename": "commands/View Single Cert or Key.html"
         },
         {
-            "title": "Commands",
-            "filename": "Commands.html"
+          "title": "Convert Between Formats",
+          "filename": "commands/Convert Between Formats.html"
+        },
+        {
+          "title": "View Bundle Contents",
+          "filename": "commands/View Bundle Contents.html"
+        },
+        {
+          "title": "Create Bundle",
+          "filename": "commands/Create Bundle.html"
+        },
+        {
+          "title": "Import to Bundle",
+          "filename": "commands/Import to Bundle.html"
+        },
+        {
+          "title": "Export from Bundle",
+          "filename": "commands/Export from Bundle.html"
+        },
+        {
+          "title": "Copy Between Bundles",
+          "filename": "commands/Copy Between Bundles.html"
+        },
+        {
+          "title": "Copy Between Bundles",
+          "filename": "commands/Copy Between Bundles.html"
+        },
+        {
+          "title": "Delete from Bundle",
+          "filename": "commands/Delete from Bundle.html"
+        },
+        {
+          "title": "Create a Self-Signed CA",
+          "filename": "commands/Create a Self-Signed CA.html"
+        },
+        {
+          "title": "Revocation (OCSP)",
+          "filename": "commands/Revocation (OCSP).html"
+        },
+        {
+          "title": "Revocation (CRL)",
+          "filename": "commands/Revocation (CRL).html"
+        },
+        {
+          "title": "SSH Host Key",
+          "filename": "commands/SSH Host Key.html"
+        },
+        {
+          "title": "Generate RSA Keys",
+          "filename": "commands/Generate RSA Keys.html"
+        },
+        {
+          "title": "Digest Signing",
+          "filename": "commands/Digest Signing.html"
+        },
+        {
+          "title": "TLS Troubleshooting",
+          "filename": "commands/TLS Troubleshooting.html"
+        },
+        {
+          "title": "Passphrase Management",
+          "filename": "commands/Passphrase Management.html"
+        },
+        {
+          "title": "Password Prompt Generate",
+          "filename": "commands/Password Prompt Generate.html"
         }
-    ]
+      ]
+    },
+    {
+      "title": "Reference",
+      "sections": [
+        {
+          "title": "File Types",
+          "filename": "reference/File Types.html"
+        },
+        {
+          "title": "PEM Notes",
+          "filename": "reference/PEM Notes.html"
+        },
+        {
+          "title": "Hashing Algorithms",
+          "filename": "reference/Hashing Algorithms.html"
+        },
+        {
+          "title": "Encryption Algorithms",
+          "filename": "reference/Encryption Algorithms.html"
+        },
+        {
+          "title": "Key Exchange",
+          "filename": "reference/Key Exchange.html"
+        },
+        {
+          "title": "Block Cipher Mode of Operation",
+          "filename": "reference/Block Cipher Mode of Operation.html"
+        },
+        {
+          "title": "Cipher-Exchange-Mode Combos",
+          "filename": "reference/Cipher-Exchange-Mode Combos.html"
+        },
+        {
+          "title": "Common Errors",
+          "filename": "reference/Common Errors.html"
+        },
+        {
+          "title": "Socket Encryption Standard",
+          "filename": "reference/Socket Encryption Standard.html"
+        },
+        {
+          "title": "Key Usages",
+          "filename": "reference/Key Usages.html"
+        },
+        {
+          "title": "Common Attacks",
+          "filename": "reference/Common Attacks.html"
+        },
+        {
+          "title": "Which Should I Use",
+          "filename": "reference/Which Should I Use.html"
+        },
+        {
+          "title": "Reference Links",
+          "filename": "reference/Reference Links.html"
+        }
+      ]
+    }
+  ]
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

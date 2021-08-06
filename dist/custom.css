@@ -2,55 +2,113 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
+  /* overflow-y: hidden; */
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 7fr;
+  grid-template-columns: 280px 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  height: 100vh;
+  width: 100vw;
 }
 
 .grid > nav {
   grid-area: 1 / 1 / 2 / 2;
-  position: fixed;
   padding: 5px;
+  overflow-y: hidden;
+  background-color: #8dffc2;
 }
 
-.grid > nav > a {
-  font-size: 16pt;
-  display: block;
-  padding: 3px;
+.grid > nav > ul {
+  padding-top: 0.5em;
+  list-style: none;
+  padding-left: 4px;
 }
 
-.grid > article {
+.grid > nav > ul > li {
+  font-size: 14pt;
+}
+
+.grid > nav > ul > li > div {
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+.grid > nav > ul > li > ul {
+  list-style: none;
+  padding-left: 8px;
+}
+
+.grid > nav > ul > li > ul > li {
+  font-size: 12pt;
+  word-wrap: normal;
+  text-indent: -1em;
+  padding-left: 1em;
+  padding-top: 0.1em;
+}
+
+.grid > nav > ul > li > ul > li > a {
+  word-wrap: normal;
+  text-decoration: none;
+  color: blue;
+}
+
+.grid > nav > ul > li > ul > li > a:visited {
+  color: blue;
+}
+
+.grid > main {
   grid-area: 1 / 2 / 2 / 3;
-  background-color: darkseagreen !important;
+  background-color: #d4ffe8;
   padding: 5px;
   overflow-x: hidden;
   overflow-y: auto;
-  max-width: inherit;
-  width: auto;
 }
 
-.grid > article > section {
+.grid > main > article > section > table {
   max-width: inherit;
-  width: auto;
+  border-collapse: collapse;
+  border: 1px solid black;
 }
 
-.grid > article > section > figure {
+.grid > main > article > section > table > tbody {
   max-width: inherit;
-  width: auto;
+  border: 1px solid black;
 }
 
-
-.grid > article > section > figure > table {
+.grid > main > article > section > table > thead > tr {
   max-width: inherit;
-  width: 100%;
-  table-layout: fixed;
+  border: 1px solid black;
 }
 
-.grid > article > section > figure > table > tbody > tr > td {
+.grid > main > article > section > table > thead > tr > th {
   max-width: inherit;
+  border: 1px solid black;
+  padding: 1px;
+}
+
+.grid > main > article > section > table > tbody > tr {
+  max-width: inherit;
+  border: 1px solid black;
+}
+
+.grid > main > article > section > table > tbody > tr > td {
+  max-width: inherit;
+  border: 1px solid black;
+  padding: 1px;
+}
+
+.grid
+  > main
+  > article
+  > section
+  > table
+  > tbody
+  > tr:not(:first-child)
+  > td:last-of-type {
+  max-width: inherit;
+  font-family: "Fira Code", sans-serif;
 }

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.mjs",
   "scripts": {
+    "full": "npm run build; npm run deploy",
     "build": "node build.mjs",
     "deploy": "aws s3 sync dist/ s3://cryptocheatsheet.ninja/ --acl public-read"
   },

@@ -1,0 +1,22 @@
+{
+  "name": "crypto-cheatsheet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawngmc/crypto-cheatsheet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shawngmc/crypto-cheatsheet/issues"
+  },
+  "homepage": "https://github.com/shawngmc/crypto-cheatsheet#readme",
+  "dependencies": {
+    "jsdom": "^16.7.0"
+  }
+}

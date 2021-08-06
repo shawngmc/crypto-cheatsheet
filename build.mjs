@@ -1,5 +1,8 @@
 import { JSDOM } from 'jsdom';
 import * as fs from 'fs';
+import {remark} from 'remark'
+import remarkPresetLintRecommended from 'remark-preset-lint-recommended'
+import remarkHtml from 'remark-html'
 
 
 // const getMethods = (obj) => {
@@ -38,7 +41,17 @@ let cleanTable = function(table) {
         td.removeAttribute("dir");
     })
 
-    // TODO: Convert first row to header
+    let removeWidth = function(element) {
+        element.style.width = null;
+        if (element.children.length > 0) {
+            element.querySelectorAll('*').forEach((child) => {
+                removeWidth(child);
+            });
+        }
+    };
+    removeWidth(table);
+
+    // Convert first row to header
     let header = JSDOM.fragment("<thead><tr></tr></thead>");
     let tableHeaderRow = header.querySelector('tr');
     let topRow = tbody.querySelector('tr');
@@ -49,6 +62,7 @@ let cleanTable = function(table) {
     table.insertBefore(header, tbody);
 }
 
+// Build each article
 config.articles.forEach((article) => {
     console.log(`Building article ${article.title}...`);
     // Create Article
@@ -57,7 +71,7 @@ config.articles.forEach((article) => {
     let articleElement = newArticle.querySelector('article');
 
     // Create Article Title
-    let newTitle = JSDOM.fragment(`<h1>${article.title}</h1>`);
+    let newTitle = JSDOM.fragment(`<h2>${article.title}</h2>`);
     articleElement.appendChild(newTitle);
 
     // Create Nav Section
@@ -65,28 +79,43 @@ config.articles.forEach((article) => {
     let newArticleChildNavs = newArticleNav.querySelector('ul');
 
     // Go through sections
-    article.sections.forEach((section) => {
-        console.log(`Building section ${section.title}...`);
-    
-        // Read child doc
-        let childHtml = fs.readFileSync(`./raw-sheets/${section.filename}`, 'utf-8');
-        let childDom = JSDOM.fragment(childHtml);
-        let childTable = childDom.querySelector('table');
-    
-        cleanTable(childTable);
-    
-        // Build Content Section
-        let childId = section.title.replace(" ", "-");
-        let newSection = JSDOM.fragment(`<section id="${childId}"><h2>${section.title}</h2></section>`);
-        let sectionElement = newSection.querySelector('section');
-        sectionElement.appendChild(childTable);
+    article.sections.forEach(async (section) => {
+        let sectionContent = null;
+        let fileContents = fs.readFileSync(`./raw/${section.filename}`, 'utf-8');
+        if (section.filename.startsWith('sheets')) {
+            console.log(`  Building section ${section.title} from Google Sheet...`);
+            // Read child doc
+            let childDom = JSDOM.fragment(fileContents);
+            let childTable = childDom.querySelector('table');
+        
+            cleanTable(childTable);
+        
+            // Build Content Section
+            sectionContent = childTable;
+        } else if (section.filename.startsWith('markdown')) {
+            console.log(`  Building section ${section.title} from Markdown...`);
+            let remarkInst = remark()
+                .use(remarkPresetLintRecommended)
+                .use(remarkHtml);
 
-        // Insert Content Section
-        articleElement.appendChild(newSection);
+            let rawContent = remarkInst.processSync(fileContents);
+            sectionContent = JSDOM.fragment(String(rawContent));
+        } else {
+            console.log(`  Can't determine ${section.title} section type from path ${section.filename}; skipping!`);
+        }
 
-        // Insert TOC entry
-        let newNav = JSDOM.fragment(`<li><a href="#${childId}">${section.title}</a></li>`);
-        newArticleChildNavs.appendChild(newNav);
+        if (sectionContent){
+            // Insert Content Section;
+            let childId = section.title.replace(" ", "-");
+            let newSection = JSDOM.fragment(`<section id="${childId}"><h3>${section.title}</h3></section>`);
+            let sectionElement = newSection.querySelector('section');
+            sectionElement.appendChild(sectionContent);
+            articleElement.appendChild(newSection);
+
+            // Insert TOC entry
+            let newNav = JSDOM.fragment(`<li><a href="#${childId}">${section.title}</a></li>`);
+            newArticleChildNavs.appendChild(newNav);
+        }
     })
 
     // Add to the main doc

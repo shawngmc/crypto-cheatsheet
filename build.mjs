@@ -62,6 +62,15 @@ let cleanTable = function(table) {
     table.insertBefore(header, tbody);
 }
 
+let codeExamples = function(table) {
+    let tbody = table.querySelector('tbody');
+
+    tbody.querySelectorAll('tr').forEach((tr) => {
+        let exampleCell = tr.lastChild;
+        exampleCell.innerHTML = `<code>${exampleCell.innerHTML}</code>`;
+    })
+}
+
 // Build each article
 config.articles.forEach((article) => {
     console.log(`Building article ${article.title}...`);
@@ -89,6 +98,7 @@ config.articles.forEach((article) => {
             let childTable = childDom.querySelector('table');
         
             cleanTable(childTable);
+            codeExamples(childTable);
         
             // Build Content Section
             sectionContent = childTable;

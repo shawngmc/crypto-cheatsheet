@@ -19,7 +19,7 @@ body {
   grid-area: 1 / 1 / 2 / 2;
   padding: 5px;
   overflow-y: hidden;
-  background-color: #8dffc2;
+  background-color: #60FFAA;
 }
 
 .grid > nav > ul {
@@ -89,7 +89,7 @@ body {
   max-width: inherit;
   border: 1px solid black;
   padding: 1px;
-  background-color: #8dffc2;
+  background-color: #60FFAA;
 }
 
 .grid > main > article > section > table > tbody > tr {
@@ -128,4 +128,13 @@ body {
   font-family: "Fira Code", sans-serif;
   background-color: darkslategrey;
   color: white;
+}
+.grid
+  > main
+  > article#reference-tables
+  > section
+  > table
+  > tbody
+  > tr:nth-child(even) {
+  background-color: #C2FFDE;
 }

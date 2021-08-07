@@ -65,10 +65,10 @@ let cleanTable = function(table) {
 let codeExamples = function(table) {
     let tbody = table.querySelector('tbody');
 
-    tbody.querySelectorAll('tr').forEach((tr) => {
-        let exampleCell = tr.lastChild;
-        exampleCell.innerHTML = `<code>${exampleCell.innerHTML}</code>`;
-    })
+    // tbody.querySelectorAll('tr').forEach((tr) => {
+    //     let exampleCell = tr.lastChild;
+    //     exampleCell.innerHTML = `<code class="language-bash">${exampleCell.innerHTML}</code>`;
+    // })
 }
 
 // Build each article

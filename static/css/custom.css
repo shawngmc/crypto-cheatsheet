@@ -115,7 +115,7 @@ body {
   width: 15%;
 }
 
-/* .grid
+.grid
   > main
   > article#commands
   > section
@@ -126,4 +126,6 @@ body {
   max-width: inherit;
   width: 70%;
   font-family: "Fira Code", sans-serif;
-} */
+  background-color: darkslategrey;
+  color: white;
+}

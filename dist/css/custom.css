@@ -126,4 +126,6 @@ body {
   max-width: inherit;
   width: 70%;
   font-family: "Fira Code", sans-serif;
+  background-color: darkslategrey;
+  color: white;
 }

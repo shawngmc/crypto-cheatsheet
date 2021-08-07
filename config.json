@@ -78,15 +78,24 @@
       ]
     },
     {
+      "title": "Guides",
+      "sections": [
+        {
+          "title": "Managing Sensitive Keys",
+          "filename": "markdown/managing_sensitive_keys.md"
+        },
+        {
+          "title": "Picking a Store Type",
+          "filename": "markdown/picking_a_store_type.md"
+        }
+      ]
+    },
+    {
       "title": "Reference Tables",
       "sections": [
         {
           "title": "File Types",
           "filename": "sheets/reference-tables/File Types.html"
-        },
-        {
-          "title": "Managing Sensitive Keys",
-          "filename": "markdown/managing_sensitive_keys.md"
         },
         {
           "title": "Hashing Algorithms",
@@ -123,10 +132,6 @@
         {
           "title": "Common Attacks",
           "filename": "sheets/reference-tables/Common Attacks.html"
-        },
-        {
-          "title": "Which Should I Use",
-          "filename": "sheets/reference-tables/Which Should I Use.html"
         },
         {
           "title": "References Links",

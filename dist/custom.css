@@ -89,6 +89,7 @@ body {
   max-width: inherit;
   border: 1px solid black;
   padding: 1px;
+  background-color: #8dffc2;
 }
 
 .grid > main > article > section > table > tbody > tr {
@@ -102,6 +103,18 @@ body {
   padding: 1px;
 }
 
+
+.grid
+  > main
+  > article#commands
+  > section
+  > table
+  > tbody
+  > tr
+  > td:nth-last-child(2) {
+  width: 15%;
+}
+
 .grid
   > main
   > article#commands
@@ -111,5 +124,6 @@ body {
   > tr
   > td:last-of-type {
   max-width: inherit;
+  width: 70%;
   font-family: "Fira Code", sans-serif;
 }

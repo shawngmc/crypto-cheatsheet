@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.mjs",
   "scripts": {
-    "full": "npm run clean; npm run build; npm run deploy",
-    "clean": "rm -rf dist/*; cp -R static/* dist/",
-    "build": "node build.mjs",
+    "full": "npm run clean; npm run copy-static; npm run generate-content; npm run deploy",
+    "clean": "rm -rf dist/*",
+    "copy-static": "cp -R static/* dist/",
+    "generate-content": "node build.mjs; mkdir dist/css/; npx postcss src/css/custom.css > dist/css/custom.css",
     "deploy": "aws s3 sync dist/ s3://cryptocheatsheet.ninja/ --acl public-read"
   },
   "repository": {
@@ -26,6 +27,9 @@
     "remark-preset-lint-recommended": "^5.0.0"
   },
   "devDependencies": {
+    "cssnano": "^5.0.7",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
     "prettier": "^2.3.2"
   }
 }

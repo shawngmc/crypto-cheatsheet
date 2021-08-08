@@ -2,7 +2,6 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
-  /* overflow-y: hidden; */
 }
 
 .grid {
@@ -76,29 +75,24 @@ body {
 }
 
 .grid > main > article > section > table > tbody {
-  max-width: inherit;
   border: 1px solid black;
 }
 
 .grid > main > article > section > table > thead > tr {
-  max-width: inherit;
   border: 1px solid black;
 }
 
 .grid > main > article > section > table > thead > tr > th {
-  max-width: inherit;
   border: 1px solid black;
   padding: 1px;
   background-color: #60FFAA;
 }
 
 .grid > main > article > section > table > tbody > tr {
-  max-width: inherit;
   border: 1px solid black;
 }
 
 .grid > main > article > section > table > tbody > tr > td {
-  max-width: inherit;
   border: 1px solid black;
   padding: 1px;
 }
@@ -125,7 +119,7 @@ body {
   > td:last-of-type {
   max-width: inherit;
   width: 70%;
-  font-family: "Fira Code", sans-serif;
+  font-family: "Fira Code", monospace;
   background-color: darkslategrey;
   color: white;
 }

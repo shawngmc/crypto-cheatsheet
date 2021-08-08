@@ -44,20 +44,12 @@
           "filename": "sheets/commands/Create a Self-Signed CA.html"
         },
         {
-          "title": "Revocation (OCSP)",
-          "filename": "sheets/commands/Revocation (OCSP).html"
+          "title": "Revocation",
+          "filename": "sheets/commands/Revocation.html"
         },
         {
-          "title": "Revocation (CRL)",
-          "filename": "sheets/commands/Revocation (CRL).html"
-        },
-        {
-          "title": "SSH Host Key",
-          "filename": "sheets/commands/SSH Host Key.html"
-        },
-        {
-          "title": "Generate RSA Keys",
-          "filename": "sheets/commands/Generate RSA Keys.html"
+          "title": "Generate Keys",
+          "filename": "sheets/commands/Generate Keys.html"
         },
         {
           "title": "Digest Signing",
@@ -98,6 +90,10 @@
           "filename": "sheets/reference-tables/File Types.html"
         },
         {
+          "title": "Object Types",
+          "filename": "sheets/reference-tables/Object Types.html"
+        },
+        {
           "title": "Hashing Algorithms",
           "filename": "sheets/reference-tables/Hashing Algorithms.html"
         },
@@ -106,24 +102,24 @@
           "filename": "sheets/reference-tables/Encryption Algorithms.html"
         },
         {
-          "title": "Key Exchange",
-          "filename": "sheets/reference-tables/Key Exchange.html"
+          "title": "TLS Key Exchange",
+          "filename": "sheets/reference-tables/TLS Key Exchange.html"
+        },
+        {
+          "title": "TLS Cipher Suites",
+          "filename": "sheets/reference-tables/TLS Cipher Suites.html"
         },
         {
           "title": "Block Cipher Mode of Operation",
           "filename": "sheets/reference-tables/Block Cipher Mode of Operation.html"
         },
         {
-          "title": "Cipher-Exchange-Mode Combos",
-          "filename": "sheets/reference-tables/Cipher-Exchange-Mode Combos.html"
-        },
-        {
           "title": "Common Errors",
           "filename": "sheets/reference-tables/Common Errors.html"
         },
         {
-          "title": "Socket Encryption Standard",
-          "filename": "sheets/reference-tables/Socket Encryption Standard.html"
+          "title": "TLS and SSL Versions",
+          "filename": "sheets/reference-tables/TLS and SSL Versions.html"
         },
         {
           "title": "Key Usages",

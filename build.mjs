@@ -28,19 +28,30 @@ let cleanTable = function(table) {
     let tbody = table.querySelector('tbody');
     tbody.querySelectorAll('th').forEach((th) => {
         th.remove();
-    })
+    });
 
     // Clean styles
     table.className = "";
     table.querySelectorAll('tr').forEach((tr) => {
-        tr.className = "";
+        tr.removeAttribute("class");
         tr.removeAttribute("style");
-    })
+    });
     table.querySelectorAll('td').forEach((td) => {
-        td.className = "";
+        td.removeAttribute("class");
         td.removeAttribute("dir");
-    })
+    });
 
+    // Remove 'softmerge' divs
+    table.querySelectorAll('.softmerge-inner').forEach((oldDiv) => {
+        oldDiv.parentNode.innerHTML = oldDiv.innerHTML;
+    });
+
+    // Make all child link no-referrer
+    table.querySelectorAll('a').forEach((a) => {
+        a.setAttribute('rel', 'noreferrer')
+    });
+
+    // Recursively remove saved widths
     let removeWidth = function(element) {
         element.style.width = null;
         if (element.children.length > 0) {
@@ -90,7 +101,7 @@ config.articles.forEach((article) => {
     // Go through sections
     article.sections.forEach(async (section) => {
         let sectionContent = null;
-        let fileContents = fs.readFileSync(`./raw/${section.filename}`, 'utf-8');
+        let fileContents = fs.readFileSync(`./src/${section.filename}`, 'utf-8');
         if (section.filename.startsWith('sheets')) {
             console.log(`  Building section ${section.title} from Google Sheet...`);
             // Read child doc
@@ -108,8 +119,8 @@ config.articles.forEach((article) => {
                 .use(remarkPresetLintRecommended)
                 .use(remarkHtml);
 
-            let rawContent = remarkInst.processSync(fileContents);
-            sectionContent = JSDOM.fragment(String(rawContent));
+            let srcContent = remarkInst.processSync(fileContents);
+            sectionContent = JSDOM.fragment(String(srcContent));
         } else {
             console.log(`  Can't determine ${section.title} section type from path ${section.filename}; skipping!`);
         }

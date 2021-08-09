@@ -110,16 +110,16 @@
           "filename": "sheets/reference-tables/TLS Cipher Suites.html"
         },
         {
+          "title": "TLS and SSL Versions",
+          "filename": "sheets/reference-tables/TLS and SSL Versions.html"
+        },
+        {
           "title": "Block Cipher Mode of Operation",
           "filename": "sheets/reference-tables/Block Cipher Mode of Operation.html"
         },
         {
           "title": "Common Errors",
           "filename": "sheets/reference-tables/Common Errors.html"
-        },
-        {
-          "title": "TLS and SSL Versions",
-          "filename": "sheets/reference-tables/TLS and SSL Versions.html"
         },
         {
           "title": "Key Usages",
@@ -130,7 +130,7 @@
           "filename": "sheets/reference-tables/Common Attacks.html"
         },
         {
-          "title": "References Links",
+          "title": "Reference Links",
           "filename": "sheets/reference-tables/Reference Links.html"
         }
       ]

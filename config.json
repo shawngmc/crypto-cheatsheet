@@ -32,16 +32,16 @@
           "filename": "sheets/commands/Copy Between Bundles.html"
         },
         {
-          "title": "Copy Between Bundles",
-          "filename": "sheets/commands/Copy Between Bundles.html"
-        },
-        {
           "title": "Delete from Bundle",
           "filename": "sheets/commands/Delete from Bundle.html"
         },
         {
           "title": "Create a Self-Signed CA",
           "filename": "sheets/commands/Create a Self-Signed CA.html"
+        },
+        {
+          "title": "Manage Local CAs",
+          "filename": "sheets/commands/Manage Local CAs.html"
         },
         {
           "title": "Revocation",
@@ -92,6 +92,10 @@
         {
           "title": "Object Types",
           "filename": "sheets/reference-tables/Object Types.html"
+        },
+        {
+          "title": "Tools",
+          "filename": "sheets/reference-tables/Tools.html"
         },
         {
           "title": "Hashing Algorithms",

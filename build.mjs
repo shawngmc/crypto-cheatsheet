@@ -76,10 +76,13 @@ let cleanTable = function(table) {
 let codeExamples = function(table) {
     let tbody = table.querySelector('tbody');
 
-    // tbody.querySelectorAll('tr').forEach((tr) => {
-    //     let exampleCell = tr.lastChild;
-    //     exampleCell.innerHTML = `<code class="language-bash">${exampleCell.innerHTML}</code>`;
-    // })
+    tbody.querySelectorAll('tr').forEach((tr) => {
+        let exampleCell = tr.lastChild;
+        let contents = exampleCell.innerHTML;
+        let exampleHolder = JSDOM.fragment(`<span class="code-example">${contents}</span>`);
+        exampleCell.innerHTML = '';
+        exampleCell.appendChild(exampleHolder);
+    })
 }
 
 // Build each article
@@ -95,7 +98,7 @@ config.articles.forEach((article) => {
     articleElement.appendChild(newTitle);
 
     // Create Nav Section
-    let newArticleNav = JSDOM.fragment(`<li><div>${article.title}</div><ul></ul></li>`);
+    let newArticleNav = JSDOM.fragment(`<li class="nav-header"><div>${article.title}</div><ul></ul></li>`);
     let newArticleChildNavs = newArticleNav.querySelector('ul');
 
     // Go through sections
@@ -109,7 +112,9 @@ config.articles.forEach((article) => {
             let childTable = childDom.querySelector('table');
         
             cleanTable(childTable);
-            codeExamples(childTable);
+            if (articleId == "commands") {
+                codeExamples(childTable);
+            }
         
             // Build Content Section
             sectionContent = childTable;
@@ -134,7 +139,7 @@ config.articles.forEach((article) => {
             articleElement.appendChild(newSection);
 
             // Insert TOC entry
-            let newNav = JSDOM.fragment(`<li><a href="#${childId}">${section.title}</a></li>`);
+            let newNav = JSDOM.fragment(`<li class="nav-item"><a href="#${childId}">${section.title}</a></li>`);
             newArticleChildNavs.appendChild(newNav);
         }
     })

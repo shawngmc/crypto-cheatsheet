@@ -18,30 +18,30 @@ body {
   grid-area: 1 / 1 / 2 / 2;
   padding: 5px;
   overflow-y: hidden;
-  background-color: #60FFAA;
+  background-color: hsl(148, 100%, 69%);
+}
+.grid > nav > h1 {
+  text-align: center;
 }
 
 .grid > nav > ul {
   padding-top: 0.5em;
   list-style: none;
   padding-left: 4px;
-}
-
-.grid > nav > ul > li {
   font-size: 14pt;
 }
 
-.grid > nav > ul > li > div {
+.nav-header > div {
   border-bottom: 1px solid black;
   width: 100%;
 }
 
-.grid > nav > ul > li > ul {
+.nav-header > ul {
   list-style: none;
   padding-left: 8px;
 }
 
-.grid > nav > ul > li > ul > li {
+.nav-item {
   font-size: 12pt;
   word-wrap: normal;
   text-indent: -1em;
@@ -49,86 +49,66 @@ body {
   padding-top: 0.1em;
 }
 
-.grid > nav > ul > li > ul > li > a {
+.nav-item > a {
   word-wrap: normal;
   text-decoration: none;
   color: blue;
 }
 
-.grid > nav > ul > li > ul > li > a:visited {
+.nav-item > a:visited {
   color: blue;
 }
 
 .grid > main {
   grid-area: 1 / 2 / 2 / 3;
-  background-color: #d4ffe8;
+  background-color: hsl(148, 100%, 92%);
   padding: 5px;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-.grid > main > article > section > table {
+section > table {
   max-width: 100%;
   border-collapse: collapse;
   border: 1px solid black;
   width: 100%;
 }
 
-.grid > main > article > section > table > tbody {
+section > table > tbody {
   border: 1px solid black;
 }
 
-.grid > main > article > section > table > thead > tr {
+section > table > thead > tr {
   border: 1px solid black;
 }
 
-.grid > main > article > section > table > thead > tr > th {
-  border: 1px solid black;
-  padding: 1px;
-  background-color: #60FFAA;
-}
-
-.grid > main > article > section > table > tbody > tr {
-  border: 1px solid black;
-}
-
-.grid > main > article > section > table > tbody > tr > td {
+section > table > thead > tr > th {
   border: 1px solid black;
   padding: 1px;
+  background-color: hsl(148, 100%, 69%);
 }
 
+section > table > tbody > tr {
+  border: 1px solid black;
+}
 
-.grid
-  > main
-  > article#commands
-  > section
-  > table
-  > tbody
-  > tr
-  > td:nth-last-child(2) {
+section > table > tbody > tr > td {
+  border: 1px solid black;
+  padding: 1px;
+}
+
+article#commands td:nth-last-child(2) {
   width: 15%;
 }
 
-.grid
-  > main
-  > article#commands
-  > section
-  > table
-  > tbody
-  > tr
-  > td:last-of-type {
+article#commands td:last-of-type {
   max-width: inherit;
   width: 70%;
   font-family: "Fira Code", monospace;
-  background-color: darkslategrey;
+  background-color: hsl(180, 25%, 25%);
   color: white;
 }
-.grid
-  > main
-  > article#reference-tables
-  > section
-  > table
-  > tbody
-  > tr:nth-child(even) {
-  background-color: #C2FFDE;
+
+article#reference-tables tr:nth-child(even) {
+  background-color: hsl(148, 100%, 88%);
 }

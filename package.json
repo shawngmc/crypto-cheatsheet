@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.mjs",
   "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
     "full": "npm run clean; npm run copy-static; npm run generate-content; npm run deploy",
     "clean": "rm -rf dist/*",
     "copy-static": "cp -R static/* dist/",
@@ -24,7 +26,8 @@
     "jsdom": "^16.7.0",
     "remark": "^14.0.1",
     "remark-html": "^14.0.0",
-    "remark-preset-lint-recommended": "^5.0.0"
+    "remark-preset-lint-recommended": "^5.0.0",
+    "snowpack": "^3.8.3"
   },
   "devDependencies": {
     "cssnano": "^5.0.7",

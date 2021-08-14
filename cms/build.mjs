@@ -1,21 +1,11 @@
 import { JSDOM } from 'jsdom';
 import * as fs from 'fs';
-import {remark} from 'remark'
-import remarkPresetLintRecommended from 'remark-preset-lint-recommended'
-import remarkHtml from 'remark-html'
+import {remark} from 'remark';
+import remarkPresetLintRecommended from 'remark-preset-lint-recommended';
+import remarkHtml from 'remark-html';
 
-
-// const getMethods = (obj) => {
-//     let properties = new Set()
-//     let currentObj = obj
-//     do {
-//       Object.getOwnPropertyNames(currentObj).map(item => properties.add(item))
-//     } while ((currentObj = Object.getPrototypeOf(currentObj)))
-//     return [...properties.keys()].filter(item => typeof obj[item] === 'function')
-//   }
-
-// Read sections file
-let config = JSON.parse(fs.readFileSync('config.json', 'utf-8'));
+// Read articles file
+let config = JSON.parse(fs.readFileSync('articles.json', 'utf-8'));
 
 // Read templates
 let skeletonHtml = fs.readFileSync('skeleton.html', 'utf-8');

@@ -1,11 +1,10 @@
 import mime from 'mime-types';
 import S3SyncClient from 's3-sync-client';
 import AWS from "aws-sdk";
+import * as fs from 'fs';
 
-// Set the AWS Region.
-const REGION = "us-east-1";
-const BUCKET = "cryptocheatsheet.ninja";
-
+// Read config file
+let config = JSON.parse(fs.readFileSync('../config.json', 'utf-8'));
 
 AWS.config.getCredentials(function(err) {
   if (err) {
@@ -20,7 +19,7 @@ AWS.config.getCredentials(function(err) {
 const run = async () => {
     try {
         const sync = new S3SyncClient({
-            region: REGION,
+            region: config.aws.region,
             credentials: {
                 accessKeyId: AWS.config.credentials.accessKeyId,
                 secretAccessKey: AWS.config.credentials.secretAccessKey,
@@ -28,7 +27,7 @@ const run = async () => {
         });
 
         console.log(`Copying files with ACL and content-type...`);
-        await sync.bucketWithLocal('../build/', BUCKET, {
+        await sync.bucketWithLocal('../build/', config.aws.site_bucket, {
             commandInput: {
                 ACL: "public-read",
                 ContentType: (syncCommandInput) => (

@@ -1,3 +1,22 @@
+:root {
+  --malachite: hsla(148, 100%, 45%, 1);
+  --spring-green: hsla(148, 82%, 51%, 1);
+  --medium-spring-green: hsla(148, 83%, 57%, 1);
+  --medium-spring-green-2: hsla(148, 82%, 63%, 1);
+  --medium-spring-green-3: hsla(148, 83%, 69%, 1);
+  --aquamarine: hsla(148, 83%, 75%, 1);
+  --magic-mint: hsla(148, 84%, 80%, 1);
+  --aero-blue: hsla(148, 83%, 86%, 1);
+  --aero-blue-2: hsla(148, 85%, 92%, 1);
+  --mint-cream: hsla(150, 100%, 98%, 1);
+  --bg-primary: var(--aquamarine);
+  --bg-secondary: var(--mint-cream);
+  --bg-tertiary: var(--magic-mint);
+  --bg-code: hsl(180, 25%, 25%);
+  --bg-logo: var(--bg-code);
+  --fg-logo: var(--malachite);
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -16,21 +35,25 @@ body {
 
 .grid > nav {
   grid-area: 1 / 1 / 2 / 2;
-  padding: 5px;
+  padding: 0;
   overflow-y: hidden;
-  background-color: hsl(148, 100%, 69%);
-  margin: 0 20px 0 0;
-  box-shadow: 0 0 20px 15px hsl(148, 100%, 69%);
+  background-color: var(--bg-primary);
 }
 .grid > nav > h1 {
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2ch;
+  background-color: var(--bg-logo);
+  color: var(--fg-logo);
+  margin: 0;
+  font-size: 2rem;
+  font-family: "Fira Code", monospace;
 }
 
 .grid > nav > ul {
-  padding-top: 0.5em;
+  padding: 0.5em;
   list-style: none;
-  padding-left: 4px;
-  font-size: 14pt;
+  font-size: 1.1rem;
 }
 
 .nav-header > div {
@@ -38,13 +61,17 @@ body {
   width: 100%;
 }
 
+.nav-header .iconify {
+  padding-right: .6rem;
+}
 .nav-header > ul {
   list-style: none;
-  padding-left: 8px;
+  padding-bottom: 1rem;
+  padding-left: 1.7rem;
 }
 
 .nav-item {
-  font-size: 12pt;
+  font-size: 1rem;
   word-wrap: normal;
   text-indent: -1em;
   padding-left: 1em;
@@ -63,14 +90,40 @@ body {
 
 .grid > main {
   grid-area: 1 / 2 / 2 / 3;
-  background-color: hsl(148, 100%, 92%);
+  background-color: var(--bg-secondary);
   padding: 15px;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
+.grid > main::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.grid > main::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.grid > main::-webkit-scrollbar-thumb {
+  background: var(--bg-primary);
+}
+
+article .iconify {
+  padding-right: 1rem;
+}
+
+article > h2 {
+  font-size: 1.7rem;
+}
+
 section {
   scroll-margin-top: 1em;
+  margin: 1rem 0 2rem;
+}
+
+section > h3 {
+  margin: 0 0 .5rem;
+  font-size: 1.4rem;
 }
 
 section > table {
@@ -108,7 +161,7 @@ article#commands td:last-of-type {
   max-width: inherit;
   width: 70%;
   font-family: "Fira Code", monospace;
-  background-color: hsl(180, 25%, 25%);
+  background-color: var(--bg-code);
   color: white;
 }
 
@@ -118,5 +171,5 @@ article#commands thead {
 }
 
 article#reference-tables tr:nth-child(even) {
-  background-color: hsl(148, 100%, 88%);
+  background-color: var(--bg-tertiary);
 }

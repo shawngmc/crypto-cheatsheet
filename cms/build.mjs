@@ -84,11 +84,11 @@ config.articles.forEach((article) => {
     let articleElement = newArticle.querySelector('article');
 
     // Create Article Title
-    let newTitle = JSDOM.fragment(`<h2>${article.title}</h2>`);
+    let newTitle = JSDOM.fragment(`<h2><span class="iconify" data-icon="${article.icon}"></span>${article.title}</h2>`);
     articleElement.appendChild(newTitle);
 
     // Create Nav Section
-    let newArticleNav = JSDOM.fragment(`<li class="nav-header"><div>${article.title}</div><ul></ul></li>`);
+    let newArticleNav = JSDOM.fragment(`<li class="nav-header"><div><span class="iconify" data-icon="${article.icon}"></span>${article.title}</div><ul></ul></li>`);
     let newArticleChildNavs = newArticleNav.querySelector('ul');
 
     // Go through sections

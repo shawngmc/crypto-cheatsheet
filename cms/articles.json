@@ -2,6 +2,7 @@
   "articles": [
     {
       "title": "Commands",
+      "icon": "bi:terminal",
       "sections": [
         {
           "title": "View Single Cert or Key",
@@ -64,13 +65,14 @@
           "filename": "sheets/commands/Passphrase Management.html"
         },
         {
-          "title": "Password Prompt Generate",
+          "title": "Password Prompt / Generate",
           "filename": "sheets/commands/Password Prompt Generate.html"
         }
       ]
     },
     {
       "title": "Guides",
+      "icon": "icon-park-outline:guide-board",
       "sections": [
         {
           "title": "Managing Sensitive Keys",
@@ -84,6 +86,7 @@
     },
     {
       "title": "Reference Tables",
+      "icon": "bi:table",
       "sections": [
         {
           "title": "File Types",
@@ -118,7 +121,7 @@
           "filename": "sheets/reference-tables/TLS and SSL Versions.html"
         },
         {
-          "title": "Block Cipher Mode of Operation",
+          "title": "Block Cipher Modes",
           "filename": "sheets/reference-tables/Block Cipher Mode of Operation.html"
         },
         {

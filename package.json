@@ -21,6 +21,7 @@
   },
   "homepage": "https://s3.amazonaws.com/cryptocheatsheet.ninja/index.html",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "aws-sdk": "^2.968.0",
     "clipboard": "^2.0.8",
     "hint.css": "^2.6.0",

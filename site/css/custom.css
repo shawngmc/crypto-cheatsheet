@@ -9,11 +9,13 @@
   --aero-blue: hsla(148, 83%, 86%, 1);
   --aero-blue-2: hsla(148, 85%, 92%, 1);
   --mint-cream: hsla(150, 100%, 98%, 1);
+  --dark-accent-old: hsl(158, 25%, 25%);
+  --dark-accent-match: hsl(148, 35%, 35%);
   --bg-primary: var(--aquamarine);
   --bg-secondary: var(--mint-cream);
   --bg-tertiary: var(--magic-mint);
-  --bg-code: hsl(180, 25%, 25%);
-  --bg-logo: var(--bg-code);
+  --bg-code: var(--dark-accent-match);
+  --bg-logo: var(--dark-accent-old);
   --fg-logo: var(--malachite);
 }
 
@@ -54,6 +56,7 @@ body {
   padding: 0.5em;
   list-style: none;
   font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .nav-header > div {
@@ -72,6 +75,7 @@ body {
 
 .nav-item {
   font-size: 1rem;
+  font-weight: normal;
   word-wrap: normal;
   text-indent: -1em;
   padding-left: 1em;
@@ -81,11 +85,15 @@ body {
 .nav-item > a {
   word-wrap: normal;
   text-decoration: none;
-  color: blue;
+  color: black;
 }
 
 .nav-item > a:visited {
-  color: blue;
+  color: black;
+}
+
+.nav-item > a:hover {
+  text-decoration: underline;
 }
 
 .grid > main {
@@ -132,8 +140,6 @@ section > table {
   width: 100%;
 }
 
-section > table > tbody {
-}
 
 section > table > thead > tr {
   border: 0;
@@ -144,8 +150,6 @@ section > table > thead > tr > th {
   padding: 1px;
 }
 
-section > table > tbody > tr {
-}
 
 section > table > tbody > tr > td {
   border: 0;
@@ -163,6 +167,7 @@ article#commands td:last-of-type {
   font-family: "Fira Code", monospace;
   background-color: var(--bg-code);
   color: white;
+  padding: 0.2rem;
 }
 
 

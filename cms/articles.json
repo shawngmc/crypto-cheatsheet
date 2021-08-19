@@ -76,11 +76,11 @@
       "sections": [
         {
           "title": "Managing Sensitive Keys",
-          "filename": "markdown/managing_sensitive_keys.md"
+          "filename": "markdown/guides/managing_sensitive_keys.md"
         },
         {
           "title": "Picking a Store Type",
-          "filename": "markdown/picking_a_store_type.md"
+          "filename": "markdown/guides/picking_a_store_type.md"
         }
       ]
     },
@@ -139,6 +139,16 @@
         {
           "title": "Reference Links",
           "filename": "sheets/reference-tables/Reference Links.html"
+        }
+      ]
+    },
+    {
+      "title": "About",
+      "icon": "clarity:info-standard-line",
+      "sections": [
+        {
+          "title": "Changelog",
+          "filename": "markdown/about/changelog.md"
         }
       ]
     }

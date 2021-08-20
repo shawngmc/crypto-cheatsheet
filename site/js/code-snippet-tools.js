@@ -1,6 +1,5 @@
 import ClipboardJS from 'clipboard';
 import 'hint.css/hint.css';
-import '@fortawesome/fontawesome-free/css/all.css';
 
 function clearTooltip(e) {
     e.currentTarget.setAttribute('class', 'code-example');

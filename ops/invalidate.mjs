@@ -20,7 +20,7 @@ const run = async () => {
         var params = {
           DistributionId: config.aws.cloudfront_distribution,
           InvalidationBatch: {
-            CallerReference: Date.toString(),
+            CallerReference: new Date().toString(),
             Paths: { 
               Quantity: 1, 
               Items: [

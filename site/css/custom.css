@@ -64,9 +64,15 @@ body {
   width: 100%;
 }
 
-.nav-header .iconify {
-  padding-right: .6rem;
+.svg-sprite-icon {
+  align-self: center;
+  height:1em;
+  width:1em;
+  top: .125em;
+  position: relative;
+  padding: 0 .2em 0;
 }
+
 .nav-header > ul {
   list-style: none;
   padding-bottom: 1rem;
@@ -126,6 +132,7 @@ article > h2 {
 
 section {
   scroll-margin-top: 1em;
+  scroll-snap-margin-top: 1em;
   margin: 1rem 0 2rem;
 }
 

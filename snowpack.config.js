@@ -28,5 +28,12 @@ module.exports = {
     bundle: true,
     minify: true,
     target: 'es2018',
+    loader: {
+      ".woff2": 'dataurl',
+      ".woff": 'dataurl',
+      ".eot": 'dataurl',
+      ".ttf": 'dataurl',
+      ".icon.svg": 'dataurl',
+    }
   },
 };

@@ -2,7 +2,7 @@
   "articles": [
     {
       "title": "Commands",
-      "icon": "bi:terminal",
+      "icon": "terminal",
       "sections": [
         {
           "title": "View Single Cert or Key",
@@ -72,7 +72,7 @@
     },
     {
       "title": "Guides",
-      "icon": "icon-park-outline:guide-board",
+      "icon": "map-signs",
       "sections": [
         {
           "title": "Managing Sensitive Keys",
@@ -86,7 +86,7 @@
     },
     {
       "title": "Reference Tables",
-      "icon": "bi:table",
+      "icon": "table",
       "sections": [
         {
           "title": "File Types",
@@ -144,7 +144,7 @@
     },
     {
       "title": "About",
-      "icon": "clarity:info-standard-line",
+      "icon": "info-circle",
       "sections": [
         {
           "title": "Changelog",

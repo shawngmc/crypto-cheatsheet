@@ -12,3 +12,7 @@
   * Paypal link?
 * Content
   * Convert more texts to markdown and move to Guides
+  * Evaluate more pages as sources
+    * https://www.acunetix.com/blog/articles/tls-ssl-cipher-hardening/
+    * https://owasp.org/www-chapter-london/assets/slides/OWASPLondon20180125_TLSv1.3_Andy_Brodie.pdf
+    * https://infosec.mozilla.org/guidelines/openssh

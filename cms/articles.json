@@ -1,0 +1,156 @@
+{
+  "articles": [
+    {
+      "title": "Commands",
+      "icon": "terminal",
+      "sections": [
+        {
+          "title": "View Single Cert or Key",
+          "filename": "sheets/commands/View Single Cert or Key.html"
+        },
+        {
+          "title": "Convert Between Formats",
+          "filename": "sheets/commands/Convert Between Formats.html"
+        },
+        {
+          "title": "View Bundle Contents",
+          "filename": "sheets/commands/View Bundle Contents.html"
+        },
+        {
+          "title": "Create Bundle",
+          "filename": "sheets/commands/Create Bundle.html"
+        },
+        {
+          "title": "Import to Bundle",
+          "filename": "sheets/commands/Import to Bundle.html"
+        },
+        {
+          "title": "Export from Bundle",
+          "filename": "sheets/commands/Export from Bundle.html"
+        },
+        {
+          "title": "Copy Between Bundles",
+          "filename": "sheets/commands/Copy Between Bundles.html"
+        },
+        {
+          "title": "Delete from Bundle",
+          "filename": "sheets/commands/Delete from Bundle.html"
+        },
+        {
+          "title": "Create a Self-Signed CA",
+          "filename": "sheets/commands/Create a Self-Signed CA.html"
+        },
+        {
+          "title": "Manage Local CAs",
+          "filename": "sheets/commands/Manage Local CAs.html"
+        },
+        {
+          "title": "Revocation",
+          "filename": "sheets/commands/Revocation.html"
+        },
+        {
+          "title": "Generate Keys",
+          "filename": "sheets/commands/Generate Keys.html"
+        },
+        {
+          "title": "Digest Signing",
+          "filename": "sheets/commands/Digest Signing.html"
+        },
+        {
+          "title": "TLS Troubleshooting",
+          "filename": "sheets/commands/TLS Troubleshooting.html"
+        },
+        {
+          "title": "Passphrase Management",
+          "filename": "sheets/commands/Passphrase Management.html"
+        },
+        {
+          "title": "Password Prompt / Generate",
+          "filename": "sheets/commands/Password Prompt Generate.html"
+        }
+      ]
+    },
+    {
+      "title": "Guides",
+      "icon": "map-signs",
+      "sections": [
+        {
+          "title": "Managing Sensitive Keys",
+          "filename": "markdown/guides/managing_sensitive_keys.md"
+        },
+        {
+          "title": "Picking a Store Type",
+          "filename": "markdown/guides/picking_a_store_type.md"
+        }
+      ]
+    },
+    {
+      "title": "Reference Tables",
+      "icon": "table",
+      "sections": [
+        {
+          "title": "File Types",
+          "filename": "sheets/reference-tables/File Types.html"
+        },
+        {
+          "title": "Object Types",
+          "filename": "sheets/reference-tables/Object Types.html"
+        },
+        {
+          "title": "Tools",
+          "filename": "sheets/reference-tables/Tools.html"
+        },
+        {
+          "title": "Hashing Algorithms",
+          "filename": "sheets/reference-tables/Hashing Algorithms.html"
+        },
+        {
+          "title": "Encryption Algorithms",
+          "filename": "sheets/reference-tables/Encryption Algorithms.html"
+        },
+        {
+          "title": "TLS Key Exchange",
+          "filename": "sheets/reference-tables/TLS Key Exchange.html"
+        },
+        {
+          "title": "TLS Cipher Suites",
+          "filename": "sheets/reference-tables/TLS Cipher Suites.html"
+        },
+        {
+          "title": "TLS and SSL Versions",
+          "filename": "sheets/reference-tables/TLS and SSL Versions.html"
+        },
+        {
+          "title": "Block Cipher Modes",
+          "filename": "sheets/reference-tables/Block Cipher Mode of Operation.html"
+        },
+        {
+          "title": "Common Errors",
+          "filename": "sheets/reference-tables/Common Errors.html"
+        },
+        {
+          "title": "Key Usages",
+          "filename": "sheets/reference-tables/Key Usages.html"
+        },
+        {
+          "title": "Common Attacks",
+          "filename": "sheets/reference-tables/Common Attacks.html"
+        },
+        {
+          "title": "Reference Links",
+          "filename": "sheets/reference-tables/Reference Links.html"
+        }
+      ]
+    },
+    {
+      "title": "About",
+      "icon": "info-circle",
+      "sections": [
+        {
+          "title": "Changelog",
+          "filename": "markdown/about/changelog.md"
+        }
+      ]
+    }
+  ]
+}

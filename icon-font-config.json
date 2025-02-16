@@ -1,6 +1,6 @@
 {
   "name": "crypto-cheatsheet-icons",
-  "spriteOutputDir": "site/img/",
+  "spriteOutputDir": "public/img/",
   "sources": [
     {
       "name": "font-awesome-free-solid",
@@ -13,11 +13,12 @@
       "source": "font-awesome-free-solid"
     },
     {
-      "id": "info-circle",
+      "id": "circle-info",
       "source": "font-awesome-free-solid"
     },
     {
-      "id": "map-signs",
+
+      "id": "signs-post",
       "source": "font-awesome-free-solid"
     },
     {

@@ -1,7 +1,6 @@
 import mime from 'mime-types';
-import { S3Client} from '@aws-sdk/client-s3';
+import { S3Client } from '@aws-sdk/client-s3';
 import { S3SyncClient } from 's3-sync-client';
-// import { fromEnv } from "@aws-sdk/credential-providers";
 import * as fs from 'fs';
 
 // Read config file

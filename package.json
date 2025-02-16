@@ -29,8 +29,10 @@
     "hint.css": "^2.6.0"
   },
   "devDependencies": {
+    "@aws-sdk/client-cloudfront": "^3.749.0",
     "@aws-sdk/client-s3": "^3.749.0",
     "@aws-sdk/credential-providers": "^3.749.0",
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "cssnano": "^7.0.6",
     "del-cli": "^6.0.0",
     "eslint": "^8.57.1",
@@ -40,10 +42,12 @@
     "eslint-plugin-prettier": "^5.2.3",
     "jsdom": "^16.7.0",
     "mime-types": "^2.1.35",
+    "mkdirp": "^3.0.1",
     "remark": "^14.0.1",
     "remark-html": "^14.0.0",
     "remark-preset-lint-recommended": "^5.0.0",
     "s3-sync-client": "^4.3.1",
+    "svg-sprite": "^2.0.4",
     "vite": "^6.1.0",
     "vite-plugin-eslint": "^1.8.1"
   }

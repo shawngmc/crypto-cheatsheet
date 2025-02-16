@@ -1,5 +1,5 @@
 import SVGSpriter from 'svg-sprite';
-import mkdirp from 'mkdirp';
+import { mkdirp } from 'mkdirp';
 import { promises as fsPromises } from 'fs';
 import path from 'path';
 

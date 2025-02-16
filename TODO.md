@@ -2,7 +2,6 @@
 * Functionality
   * Pure-JS Scrollspy ( https://morioh.com/p/f4ed1c5153f7 ?)
   * Sortable tables?
-  * 
 * Formatting
   * More readable text
   * 'logo'
@@ -16,3 +15,8 @@
     * https://www.acunetix.com/blog/articles/tls-ssl-cipher-hardening/
     * https://owasp.org/www-chapter-london/assets/slides/OWASPLondon20180125_TLSv1.3_Andy_Brodie.pdf
     * https://infosec.mozilla.org/guidelines/openssh
+* Deployment
+  * Switch to GitHub Actions to Automate deployment
+* Documentation
+  * Document process to get spreadsheet pages
+

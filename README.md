@@ -1,8 +1,31 @@
 
 
+## Setup
+```
+npm install
+```
 
+## Start Dev Server
+```
+npm run dev
+```
 
+## Building CMS Contents
+```
+npm run generate-content
+npm run generate-icon-sprite
+```
 
+## Prepping Final Build
+```
+npm run clean
+npm run build
+```
+
+## Test Final Build
+```
+npm run preview
+```
 
 ## Deployment
 ### Manual

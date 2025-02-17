@@ -80,7 +80,7 @@ body {
 }
 
 .nav-item {
-  font-size: 1rem;
+  /* font-size: 1rem; */
   font-weight: normal;
   word-wrap: normal;
   text-indent: -1em;
@@ -175,6 +175,7 @@ article#commands td:last-of-type {
   background-color: var(--bg-code);
   color: white;
   padding: 0.2rem;
+  display: table-cell !important;
 }
 
 

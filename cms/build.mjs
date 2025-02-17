@@ -68,10 +68,7 @@ let codeExamples = function(table) {
 
     tbody.querySelectorAll('tr').forEach((tr) => {
         let exampleCell = tr.lastChild;
-        let contents = exampleCell.innerHTML;
-        let exampleHolder = JSDOM.fragment(`<span class="code-example">${contents}</span>`);
-        exampleCell.innerHTML = '';
-        exampleCell.appendChild(exampleHolder);
+        exampleCell.classList.add("code-example");
     })
 }
 

@@ -72,7 +72,7 @@
     },
     {
       "title": "Guides",
-      "icon": "map-signs",
+      "icon": "signs-post",
       "sections": [
         {
           "title": "Managing Sensitive Keys",
@@ -144,7 +144,7 @@
     },
     {
       "title": "About",
-      "icon": "info-circle",
+      "icon": "circle-info",
       "sections": [
         {
           "title": "Changelog",

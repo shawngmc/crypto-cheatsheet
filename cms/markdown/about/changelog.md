@@ -1,4 +1,6 @@
-
+#### 2025-02-17
+* Minor loading improvements
+* Improved Accessibility
 #### 2025-02-16
 * Minor loading improvements
 * Build process changed from Snowpack to Vite

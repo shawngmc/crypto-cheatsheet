@@ -1,0 +1,7 @@
+{
+    "aws": {
+        "cloudfront_distribution": "E1J0A7OO0K4JLU",
+        "region": "us-east-1",
+        "site_bucket": "s3://cryptocheatsheet.ninja"
+    }
+}

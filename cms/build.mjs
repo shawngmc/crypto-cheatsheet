@@ -85,8 +85,8 @@ config.articles.forEach((article) => {
     articleElement.appendChild(newTitle);
 
     // Create Nav Section
-    let newArticleNav = JSDOM.fragment(`<li class="nav-header"><div><svg class="svg-sprite-icon"><use xlink:href="./img/svg-icon-sprite.svg#${article.icon}"/></svg>${article.title}</div><ul></ul></li>`);
-    let newArticleChildNavs = newArticleNav.querySelector('ul');
+    let newArticleNav = JSDOM.fragment(`<div class="nav-header"><svg class="svg-sprite-icon"><use xlink:href="./img/svg-icon-sprite.svg#${article.icon}"/></svg>${article.title}</div>`);
+    let newArticleChildNavs = [];
 
     // Go through sections
     article.sections.forEach(async (section) => {
@@ -126,13 +126,17 @@ config.articles.forEach((article) => {
             articleElement.appendChild(newSection);
 
             // Insert TOC entry
-            let newNav = JSDOM.fragment(`<li class="nav-item"><a href="#${childId}">${section.title}</a></li>`);
-            newArticleChildNavs.appendChild(newNav);
+            let newNav = JSDOM.fragment(`<a class="nav-item" href="#${childId}">${section.title}</a>`);
+            newArticleChildNavs.push(newNav);
         }
     })
 
     // Add to the main doc
-    newDoc.querySelector('ul').appendChild(newArticleNav);
+    let navElement = newDoc.querySelector('nav');
+    navElement.appendChild(newArticleNav);
+    newArticleChildNavs.forEach(childNav => {
+        navElement.appendChild(childNav)
+    });
     newDoc.querySelector('main').appendChild(newArticle);
 })
 

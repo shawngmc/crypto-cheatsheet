@@ -52,16 +52,12 @@ body {
   font-family: "Fira Code", monospace;
 }
 
-.grid > nav > ul {
-  padding: 0.5em;
+.nav-header {
+  margin: 1em 1em 0.2em 1em;
   list-style: none;
   font-size: 1.1rem;
   font-weight: bold;
-}
-
-.nav-header > div {
   border-bottom: 1px solid black;
-  width: 100%;
 }
 
 .svg-sprite-icon {
@@ -73,32 +69,22 @@ body {
   padding: 0 .2em 0;
 }
 
-.nav-header > ul {
-  list-style: none;
-  padding-bottom: 1rem;
-  padding-left: 1.7rem;
-}
-
 .nav-item {
-  /* font-size: 1rem; */
   font-weight: normal;
   word-wrap: normal;
   text-indent: -1em;
-  padding-left: 1em;
-  padding-top: 0.1em;
-}
-
-.nav-item > a {
+  padding: 0.2em 0em 0.2em 2.7em;
   word-wrap: normal;
   text-decoration: none;
   color: black;
+  display: block;
 }
 
-.nav-item > a:visited {
+.nav-item:visited {
   color: black;
 }
 
-.nav-item > a:hover {
+.nav-item:hover {
   text-decoration: underline;
 }
 
@@ -162,6 +148,11 @@ section > table > tbody > tr > td {
   border: 0;
   border-bottom: 1px solid black;
   padding: 1px;
+  height: 24px;
+}
+
+section > table > tbody > tr > td > a {
+  padding: 0.2em 0em 0.2em 0em;
 }
 
 article#commands td:nth-last-child(2) {

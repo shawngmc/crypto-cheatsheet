@@ -1,0 +1,60 @@
+columns:
+  - Family
+  - Description
+  - Common Extensions
+  - Identification
+  - Binary?
+  - Encrypted
+  - References
+rows:
+  - Family: X.690 DER
+    Description: DER-encoded
+    Common Extensions: .der .cer .crt .cert .key
+    Identification: |-
+      Binary file/can't view in text editor, use posix file utility or keytool
+      `keytool -printcert -v -file in.der`
+    Binary?: BINARY
+    Encrypted: Maybe
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/X.690#DER_encoding)"
+  - Family: X.509 PEM
+    Description: X.509 Bundle
+    Common Extensions: .pem .cer .crt .cert .key .pub .crl
+    Identification: ASCII Text, 1+ blocks with optional 'bag info' and -----BEGIN
+    Binary?: ASCII
+    Encrypted: Maybe
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Privacy-enhanced_Electronic_Mail)"
+  - Family: "PKCS #7"
+    Description: PKCS#7 Certificate
+    Common Extensions: .p7b .crl
+    Identification: ""
+    Binary?: BINARY
+    Encrypted: No
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/PKCS_7)"
+  - Family: "PKCS #12"
+    Description: PKCS#12 Certificate Bundle
+    Common Extensions: .p12 .pfx
+    Identification: Verify via `keytool -list -v -keystore store.p12 -alias alias`
+    Binary?: BINARY
+    Encrypted: Maybe
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/PKCS_12)"
+  - Family: JKS
+    Description: Java KeyStore
+    Common Extensions: .jks .keystore .truststore
+    Identification: ""
+    Binary?: BINARY
+    Encrypted: Maybe
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Java_KeyStore)"
+  - Family: BKS
+    Description: BouncyCastle KeyStore
+    Common Extensions: .bks
+    Identification: ""
+    Binary?: BINARY
+    Encrypted: Maybe
+    References: "[Official Site](http://www.bouncycastle.org/specifications.html)"
+  - Family: PPK
+    Description: Putty Key File
+    Common Extensions: .ppk
+    Identification: ASCII Text, starts with `PuTTY-User-Key-File`
+    Binary?: ASCII
+    Encrypted: Maybe
+    References: "[Official Site](https://the.earth.li/~sgtatham/putty/0.76/htmldoc/AppendixC.html#ppk)"

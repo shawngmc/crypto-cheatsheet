@@ -1,0 +1,75 @@
+columns:
+  - OS
+  - Operation
+  - Command
+rows:
+  - OS:
+      text: Red Hat / CentOS / Rocky / Oracle
+      rowspan: 2
+    Operation: Install Common CA Certificates
+    Command: sudo yum install ca-certificates
+  - Operation: Update Common CA Certificates
+    Command: sudo yum update ca-certificates
+  - OS:
+      text: Debian / Ubuntu / PopOS
+      rowspan: 2
+    Operation: Install Common CA Certificates
+    Command: |-
+      sudo apt update
+      sudo apt install ca-certificates
+  - Operation: Update Common CA Certificates
+    Command: |-
+      sudo apt update
+      sudo apt --only-upgrade install ca-certificates
+  - OS:
+      text: Most Linux Distros
+      rowspan: 3
+    Operation: Add a Custom CA Certficate
+    Command: |-
+      sudo cp mycert.pe**m** /usr/local/share/ca-certificates/**mycert.pem**
+      sudo chmod 644 /usr/local/share/ca-certificates/**mycert.pem**
+      sudo update-ca-certificates
+  - Operation: Remove a Custom CA Certficate
+    Command: |-
+      sudo rm /usr/local/share/ca-certificates/**mycert.pem**
+      sudo update-ca-certificates
+  - Operation: List System CA Certs
+    Command: |-
+      awk -v cmd='openssl x509 -noout -subject' '
+          /BEGIN/{close(cmd)};{print | cmd}' < /etc/ssl/certs/ca-certificates.crt
+  - OS:
+      text: Mac OS / BSD
+      rowspan: 5
+    Operation: Add a Custom CA Certficate
+    Command: sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain **mycert.pem**
+  - Operation: Remove a Custom CA Certficate
+    Command: sudo security delete-certificate -c "**<name of existing certificate>**"
+  - Operation: List System CA Certs
+    Command: sudo security dump-trust-settings -s
+  - Operation: List Admin CA Certs
+    Command: sudo security dump-trust-settings -d
+  - Operation: List User CA Certs
+    Command: sudo security dump-trust-settings
+  - OS:
+      text: Windows
+      rowspan: 10
+    Operation: Add a Custom Root CA Certficate
+    Command: certutil -addstore -f "ROOT" **mycert.pem**
+  - Operation: Add a Custom User Intermediate CA Certficate
+    Command: certutil -user -addstore -f "CA" **mycert.pem**
+  - Operation: Remove a Custom Root CA Certficate
+    Command: certutil -delstore "ROOT" **serial-number-hex**
+  - Operation: Remove a Custom User Intermediate CA Certficate
+    Command: certutil -user -delstore "CA" **serial-number-hex**
+  - Operation: List User Root CA Certs
+    Command: certutil -user -store "ROOT"
+  - Operation: List Enterprise/Domain Root CA Certs
+    Command: certutil -enterprise -store "ROOT"
+  - Operation: List Group Policy Root CA Certs
+    Command: certutil -grouppolicy -store "ROOT"
+  - Operation: List User Intermediate CA Certs
+    Command: certutil -user -store "CA"
+  - Operation: List Enterprise/Domain Intermediate CA Certs
+    Command: certutil -enterprise -store "CA"
+  - Operation: List Group Policy Intermediate CA Certs
+    Command: certutil -grouppolicy -store "CA"

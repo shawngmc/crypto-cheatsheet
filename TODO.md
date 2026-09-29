@@ -17,6 +17,4 @@
     * https://infosec.mozilla.org/guidelines/openssh
 * Deployment
   * Switch to GitHub Actions to Automate deployment
-* Documentation
-  * Document process to get spreadsheet pages
 

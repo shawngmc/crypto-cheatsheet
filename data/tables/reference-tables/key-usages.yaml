@@ -1,0 +1,99 @@
+columns:
+  - Key Usage Extension
+  - Value
+  - RFC 5280 Defintion
+  - Meaning
+  - Example
+rows:
+  - Key Usage Extension: Digital Signature
+    Value: "0"
+    RFC 5280 Defintion: |-
+      The digitalSignature bit is asserted when the subject public key
+      is used for verifying digital signatures, other than signatures on
+      certificates (bit 5) and CRLs (bit 6), such as those used in an
+      entity authentication service, a data origin authentication
+      service, and/or an integrity service.
+    Meaning: ""
+    Example: |-
+      \- TLS/SSL Client (Browser, Email App)
+      \- S/MIME Signing (Sign Email Encoding)
+      \- Object Signing
+  - Key Usage Extension: Non-Repudiation
+    Value: "1"
+    RFC 5280 Defintion: |-
+      The nonRepudiation bit is asserted when the subject public key is
+      used to verify digital signatures, other than signatures on
+      certificates (bit 5) and CRLs (bit 6), used to provide a non-
+      repudiation service that protects against the signing entity
+      falsely denying some action. In the case of later conflict, a
+      reliable third party may determine the authenticity of the signed
+      data. (Note that recent editions of X.509 have renamed the
+      nonRepudiation bit to contentCommitment.)
+    Meaning: ""
+    Example: ""
+  - Key Usage Extension: Key Encipherment
+    Value: "2"
+    RFC 5280 Defintion: |-
+      The keyEncipherment bit is asserted when the subject public key is
+      used for enciphering private or secret keys, i.e., for key
+      transport. For example, this bit shall be set when an RSA public
+      key is to be used for encrypting a symmetric content-decryption
+      key or an asymmetric private key.
+    Meaning: ""
+    Example: |-
+      Assigned PKIS used for generation session keys for:
+      \- TLS/SSL Server (Web Server, Reverse Proxy)
+      \- S/MIME Encryption (Mail Server)
+  - Key Usage Extension: Data Encipherment
+    Value: "3"
+    RFC 5280 Defintion: |-
+      The dataEncipherment bit is asserted when the subject public key
+      is used for directly enciphering raw user data without the use of
+      an intermediate symmetric cipher. Note that the use of this bit
+      is extremely uncommon; almost all applications use key transport
+      or key agreement to establish a symmetric key.
+    Meaning: ""
+    Example: Rarely used outside of session keys.
+  - Key Usage Extension: Key Agreement
+    Value: "4"
+    RFC 5280 Defintion: |-
+      The keyAgreement bit is asserted when the subject public key is
+      used for key agreement. For example, when a Diffie-Hellman key is
+      to be used for key management, then this bit is set.
+    Meaning: ""
+    Example: ""
+  - Key Usage Extension: Certificate Signing
+    Value: "5"
+    RFC 5280 Defintion: |-
+      The keyCertSign bit is asserted when the subject public key is
+      used for verifying signatures on public key certificates. If the
+      keyCertSign bit is asserted, then the cA bit in the basic
+      constraints extension (Section 4.2.1.9) MUST also be asserted.
+    Meaning: Used to verify that a specific certificate was signed by a specific Certificate Authority.
+    Example: \- A CA would use their highly secured keypair when responding to the certificate request, generating a key that is provably signed by that CA
+  - Key Usage Extension: CRL Signing
+    Value: "6"
+    RFC 5280 Defintion: |-
+      The cRLSign bit is asserted when the subject public key is used
+      for verifying signatures on certificate revocation lists (e.g.,
+      CRLs, delta CRLs, or ARLs).
+    Meaning: Used to verify a Certifificate Revocation List from a Certificate Authority
+    Example: \- A CA revoking a specific certifcate (due to customer expiry/contract break/etc.) or intermediary (due to compromise concern) so that it would fail verification.
+  - Key Usage Extension: Encipher Only
+    Value: "7"
+    RFC 5280 Defintion: |-
+      The meaning of the encipherOnly bit is undefined in the absence of
+      the keyAgreement bit. When the encipherOnly bit is asserted and
+      the keyAgreement bit is also set, the subject public key may be
+      used only for enciphering data while performing key agreement.
+    Meaning: Modifier bit for keyAgreement limiting the public key to only encrypting data.
+    Example: ""
+  - Key Usage Extension: Decipher Only
+    Value: "8"
+    RFC 5280 Defintion: |-
+      The meaning of the decipherOnly bit is undefined in the absence of
+      the keyAgreement bit. When the decipherOnly bit is asserted and
+      the keyAgreement bit is also set, the subject public key may be
+      used only for deciphering data while performing key agreement.
+    Meaning: Modifier bit for keyAgreement limiting the public key to only decrypting data.
+    Example: ""

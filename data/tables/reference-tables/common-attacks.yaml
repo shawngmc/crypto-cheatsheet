@@ -1,0 +1,182 @@
+columns:
+  - Attack
+  - Scope
+  - Year
+  - Summary
+  - CVEs
+  - References
+rows:
+  - Attack: Bleichenbacher Attack
+    Scope: Protocol
+    Year: "1998"
+    Summary: Oracle attack that allows decryption of RSA messages
+    CVEs: N/A
+    References: "[Official Paper](http://archiv.infsec.ethz.ch/education/fs08/secsem/Bleichenbacher98.pdf)"
+  - Attack: Timing Attacks on Padding
+    Scope: Protocol
+    Year: "2002"
+    Summary: Timing attack on TLS when using CBC ciphers
+    CVEs: CVE-2003-0078
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS/SSL)"
+  - Attack: SHAttered
+    Scope: Protocol
+    Year: "2005"
+    Summary: SHA-1 collisions are feasible - a malicious file can be made with the same hash as a known-good
+    CVEs: CVE-2005-4900
+    References: "[Official Site](https://shattered.io/)"
+  - Attack: Renegotiation attack
+    Scope: Protocol
+    Year: "2009"
+    Summary: MITM attacker could downgrade session
+    CVEs: CVE-2009-3555
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS/SSL)"
+  - Attack: BEAST
+    Scope: Protocol
+    Year: "2011"
+    Summary: Unsafe IVs in TLS 1.0 allow MITM attacks
+    CVEs: CVE-2011-3389
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS/SSL)"
+  - Attack: STARTTLS Command Injection
+    Scope: Implementation
+    Year: "2011"
+    Summary: Some applications that start plaintext and upgrade can either be sent malicious commands or TLS can be cancelled
+    CVEs: CVE-2011-0411
+    References: "[IETF RFC7457 Note](https://datatracker.ietf.org/doc/html/rfc7457#section-2.2)"
+  - Attack: CRIME
+    Scope: Protocol
+    Year: "2012"
+    Summary: Attack against secure cookies on HTTPS/SPDY with TLS-level data compression
+    CVEs: CVE-2012-4929
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/CRIME)"
+  - Attack: BREACH
+    Scope: Protocol
+    Year: "2013"
+    Summary: Attack against secure cookies on HTTPS with HTTP-level data compression
+    CVEs: CVE-2013-3587
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/BREACH), [Official Site](http://breachattack.com/)"
+  - Attack: Lucky Thirteen attack
+    Scope: Protocol
+    Year: "2013"
+    Summary: Timing attack on TLS when using CBC ciphers
+    CVEs: CVE-2013-0169
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS/SSL)"
+  - Attack: RC4 NoMore
+    Scope: Protocol
+    Year: "2013"
+    Summary: Generate likely cookies via RC4 weaknesses
+    CVEs: |-
+      CVE-2013-2566
+      CVE-2015-2808
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS/SSL), [Official Site](https://www.rc4nomore.com/)"
+  - Attack: Truncation attack
+    Scope: Protocol
+    Year: "2013"
+    Summary: Prevent logout requests to keep a session active
+    CVEs: N/A
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS/SSL)"
+  - Attack: POODLE
+    Scope: Protocol
+    Year: "2014"
+    Summary: Negotiate down to SSLv3 or TLS w/CBC and bad padding implementations
+    CVEs: CVE-2014-3566
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/POODLE)"
+  - Attack: Heartbleed
+    Scope: Implementation
+    Year: "2014"
+    Summary: OpenSSL memory issue allows private key leakage.
+    CVEs: CVE-2014-0160
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Heartbleed), [Official Site](https://heartbleed.com/)"
+  - Attack: 3SHAKE
+    Scope: Protocol
+    Year: "2014"
+    Summary: TLS Client Authentication pre-master secret can be forwarded by malicious server
+    CVEs: CVE-2014-1295
+    References: "[MiTLS Article](https://mitls.org/pages/attacks/3SHAKE)"
+  - Attack: Winshock
+    Scope: Implementation
+    Year: "2014"
+    Summary: Microsoft SChannel implementation allowed Remote Code Execution
+    CVEs: CVE-2014-6321
+    References: "[MS Bulletin](https://support.microsoft.com/en-us/topic/ms14-066-vulnerability-in-schannel-could-allow-remote-code-execution-november-11-2014-4740940a-5fe0-8d9b-88b5-2e2ca5999537)"
+  - Attack: CCS
+    Scope: Implementation
+    Year: "2014"
+    Summary: OpenSSL bug in ChangeCipherSpec allows attacker to force weak key material usage
+    CVEs: CVE-2014-0224
+    References: "[Official Site](http://ccsinjection.lepidum.co.jp/)"
+  - Attack: FREAK
+    Scope: Protocol
+    Year: "2015"
+    Summary: Force server to downgrade to old 'export-grade' RSA
+    CVEs: CVE-2015-0204
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/FREAK)"
+  - Attack: Logjam
+    Scope: Protocol
+    Year: "2015"
+    Summary: Force server to downgrade to old 'export-grade' Diffie-Helmann
+    CVEs: CVE-2015-4000
+    References: "[Wikipedia](<https://en.wikipedia.org/wiki/Logjam_(computer_security)>)"
+  - Attack: SLOTH
+    Scope: Protocol
+    Year: "2015"
+    Summary: Significant collision issues in TLS 1.2 with RSA-MD5 signatures, making client auth insecure and server auth weaker
+    CVEs: CVE-2015-7575
+    References: "[MiTLS Article](https://mitls.org/pages/attacks/SLOTH)"
+  - Attack: Unholy PAC attack
+    Scope: Protocol
+    Year: "2016"
+    Summary: Bug in proxy discovery protocol causes URL leakage.
+    CVEs: N/A
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS/SSL), [BlackHat Presentation](https://www.blackhat.com/docs/us-16/materials/us-16-Kotler-Crippling-HTTPS-With-Unholy-PAC.pdf)"
+  - Attack: Sweet32 attack
+    Scope: Protocol
+    Year: "2016"
+    Summary: Birthday Attack on 64-bit CBC ciphers via MITM/Injection.
+    CVEs: |-
+      CVE-2016-2183
+      CVE-2016-6329
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS/SSL), [Official Site](https://sweet32.info/)"
+  - Attack: DROWN
+    Scope: Protocol
+    Year: "2016"
+    Summary: Negotiate down to SSLv2, including same cert on other servers
+    CVEs: |-
+      CVE-2016-0800
+      CVE-2016-0703
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/DROWN_attack), [Official Site](https://drownattack.com/)"
+  - Attack: Ticketbleed
+    Scope: Implementation
+    Year: "2016"
+    Summary: F5 BIG-IP appliances can leak uninitialized memory during session ticket usage
+    CVEs: CVE-2016-9244
+    References: "[Official Site](https://filippo.io/ticketbleed/)"
+  - Attack: ROBOT
+    Scope: Implementation
+    Year: "2017"
+    Summary: TLS servers that ONLY support RSA key exchange can decrypt traffic - at will if forward secrecy isn't enabled
+    CVEs: Numerous
+    References: "[Official Site](https://robotattack.org/)"
+  - Attack: Cloudbleed
+    Scope: Implementation
+    Year: "2017"
+    Summary: Cloudflare bug caused reverse proxies to leak secret info.
+    CVEs: N/A
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Cloudbleed)"
+  - Attack: Zombie POODLE
+    Scope: Implementation
+    Year: "2019"
+    Summary: POODLE variant on servers that inadvertantly leak padding info
+    CVEs: Numerous
+    References: "[Tripwire article](https://www.tripwire.com/state-of-security/vert/zombie-poodle/)"
+  - Attack: GOLDENDOODLE
+    Scope: Implementation
+    Year: "2019"
+    Summary: Accelerated POODLE variant on servers that don't pad data well, allowing MAC generation
+    CVEs: Numerous
+    References: "[Tripwire article](https://www.tripwire.com/state-of-security/vert/goldendoodle-attack/)"
+  - Attack: Raccoon attack
+    Scope: Protocol
+    Year: "2020"
+    Summary: TLS 1.2 and lower strip leading zeros on premaster secret, which allows careful recovery
+    CVEs: CVE-2020-5929
+    References: "[Official Site](https://raccoon-attack.com/)"

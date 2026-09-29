@@ -1,0 +1,14 @@
+columns:
+  - Type
+  - Operation
+  - Command
+rows:
+  - Type: P12
+    Operation: Delete
+    Command: keytool -delete -alias **temp** -keystore **store.p12**
+  - Type: JKS
+    Operation: Delete
+    Command: keytool -delete -alias **temp** -keystore **store.jks**
+  - Type: PEM(Nx)
+    Operation: Delete
+    Command: "# Use a text editor"

@@ -1,0 +1,22 @@
+columns:
+  - Identifier
+  - Algorithm Name
+  - Generally Secure of 2021-08-07
+  - References
+rows:
+  - Identifier: DH
+    Algorithm Name: Diffie Hellman
+    Generally Secure of 2021-08-07: ""
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)"
+  - Identifier: DHE
+    Algorithm Name: Diffie Hellman Ephemeral
+    Generally Secure of 2021-08-07: ""
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)"
+  - Identifier: ECDH
+    Algorithm Name: Elliptic Curve Diffie Hellman
+    Generally Secure of 2021-08-07: ""
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman)"
+  - Identifier: ECDHE
+    Algorithm Name: Elliptic Curve Diffie Hellman Ephemeral
+    Generally Secure of 2021-08-07: ""
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman)"

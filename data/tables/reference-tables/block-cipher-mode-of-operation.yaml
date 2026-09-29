@@ -1,0 +1,158 @@
+columns:
+  - Identifier
+  - Algorithm Name
+  - AEAD (Authenticated Encryption with Associated Data)
+  - Auth Type
+  - Crypt Type
+  - Cipher Mode
+  - Parallelizable
+  - Vulnerable to Padding Attack
+  - Vulnerable to Chosen Plaintext
+  - Vulnerable to Chosen Ciphertext
+  - Status of 2021-08-07
+  - References
+rows:
+  - Identifier: GCM
+    Algorithm Name: Galois Counter Mode
+    AEAD (Authenticated Encryption with Associated Data): Y, EtM
+    Auth Type: GMAC
+    Crypt Type: AES
+    Cipher Mode: CTR
+    Parallelizable: Y
+    Vulnerable to Padding Attack: N
+    Vulnerable to Chosen Plaintext: N
+    Vulnerable to Chosen Ciphertext: N
+    Status of 2021-08-07: ""
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Galois/Counter_Mode)"
+  - Identifier: GCM-SIV
+    Algorithm Name: Galois Counter Mode w/Synthetic IV
+    AEAD (Authenticated Encryption with Associated Data): Y, EtM
+    Auth Type: GMAC
+    Crypt Type: AES
+    Cipher Mode: CTR
+    Parallelizable: Y
+    Vulnerable to Padding Attack: N
+    Vulnerable to Chosen Plaintext: N
+    Vulnerable to Chosen Ciphertext: N
+    Status of 2021-08-07: ""
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_Codebook_.28ECB.29)"
+  - Identifier: AES-GCM-SIV
+    Algorithm Name: AES Galois Counter Mode w/Synthetic IV
+    AEAD (Authenticated Encryption with Associated Data): Y, EtM
+    Auth Type: GMAC
+    Crypt Type: AES
+    Cipher Mode: CTR
+    Parallelizable: Y
+    Vulnerable to Padding Attack: N
+    Vulnerable to Chosen Plaintext: N
+    Vulnerable to Chosen Ciphertext: N
+    Status of 2021-08-07: Slightly stronger than GCM-SIV due to better IV specifications
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_Codebook_.28ECB.29)"
+  - Identifier: CCM
+    Algorithm Name: Cipher Block Chaining - Message Authentication Mode
+    AEAD (Authenticated Encryption with Associated Data): Y, MtE
+    Auth Type: CBC-MAC
+    Crypt Type: AES
+    Cipher Mode: CBC
+    Parallelizable: ""
+    Vulnerable to Padding Attack: N
+    Vulnerable to Chosen Plaintext: N
+    Vulnerable to Chosen Ciphertext: N
+    Status of 2021-08-07: ""
+    References: "[Wikipedia](<https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_with_cipher_block_chaining_message_authentication_code_(CCM)>)"
+  - Identifier: EAX
+    Algorithm Name: Encrypt-then-Authenticate-then-Translate
+    AEAD (Authenticated Encryption with Associated Data): Y, EtM
+    Auth Type: AES-OMAC
+    Crypt Type: AES
+    Cipher Mode: CTR
+    Parallelizable: ""
+    Vulnerable to Padding Attack: N
+    Vulnerable to Chosen Plaintext: N
+    Vulnerable to Chosen Ciphertext: N
+    Status of 2021-08-07: Secure for messages longer than key
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/EAX_mode)"
+  - Identifier: CWC
+    Algorithm Name: Carter–Wegman + CTR
+    AEAD (Authenticated Encryption with Associated Data): Y, E&M
+    Auth Type: CW MAC
+    Crypt Type: AES
+    Cipher Mode: CTR
+    Parallelizable: Y
+    Vulnerable to Padding Attack: N
+    Vulnerable to Chosen Plaintext: N
+    Vulnerable to Chosen Ciphertext: N
+    Status of 2021-08-07: Not heavily used
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/CWC_mode)"
+  - Identifier: ECB
+    Algorithm Name: Electronic Code Book
+    AEAD (Authenticated Encryption with Associated Data): N
+    Auth Type: N/A
+    Crypt Type: AES
+    Cipher Mode: ECB
+    Parallelizable: ""
+    Vulnerable to Padding Attack: Y
+    Vulnerable to Chosen Plaintext: Y
+    Vulnerable to Chosen Ciphertext: Y
+    Status of 2021-08-07: Not recommended, susceptible to pattern and rainbow attacks
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_Codebook_.28ECB.29)"
+  - Identifier: CBC
+    Algorithm Name: Cipher Block Chaining
+    AEAD (Authenticated Encryption with Associated Data): N
+    Auth Type: N/A
+    Crypt Type: AES
+    Cipher Mode: CBC
+    Parallelizable: Decrypt-Only
+    Vulnerable to Padding Attack: Y
+    Vulnerable to Chosen Plaintext: Y
+    Vulnerable to Chosen Ciphertext: N
+    Status of 2021-08-07: ""
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_.28CBC.29)"
+  - Identifier: PCBC
+    Algorithm Name: Propagating Cipher Block Chaining
+    AEAD (Authenticated Encryption with Associated Data): N
+    Auth Type: N/A
+    Crypt Type: AES
+    Cipher Mode: PCBC
+    Parallelizable: N
+    Vulnerable to Padding Attack: Y
+    Vulnerable to Chosen Plaintext: Y
+    Vulnerable to Chosen Ciphertext: N
+    Status of 2021-08-07: Generally uncommon
+    References: "[Wikipedia](<https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Propagating_cipher_block_chaining_(PCBC)>)"
+  - Identifier: CFB
+    Algorithm Name: Cipher Feedback
+    AEAD (Authenticated Encryption with Associated Data): N
+    Auth Type: N/A
+    Crypt Type: AES
+    Cipher Mode: CFB
+    Parallelizable: Decrypt-Only
+    Vulnerable to Padding Attack: Y
+    Vulnerable to Chosen Plaintext: Y
+    Vulnerable to Chosen Ciphertext: Y
+    Status of 2021-08-07: N
+    References: "[Wikipedia](<https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_feedback_(CFB)>)"
+  - Identifier: OFB
+    Algorithm Name: Output feedback
+    AEAD (Authenticated Encryption with Associated Data): N
+    Auth Type: N/A
+    Crypt Type: AES
+    Cipher Mode: OFB
+    Parallelizable: N
+    Vulnerable to Padding Attack: Y
+    Vulnerable to Chosen Plaintext: N
+    Vulnerable to Chosen Ciphertext: Y
+    Status of 2021-08-07: ""
+    References: "[Wikipedia](<https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Output_feedback_(OFB)>)"
+  - Identifier: CTR
+    Algorithm Name: Counter mode
+    AEAD (Authenticated Encryption with Associated Data): N
+    Auth Type: N/A
+    Crypt Type: AES
+    Cipher Mode: CTR
+    Parallelizable: Y
+    Vulnerable to Padding Attack: N
+    Vulnerable to Chosen Plaintext: N
+    Vulnerable to Chosen Ciphertext: N
+    Status of 2021-08-07: ""
+    References: "[Wikipedia](<https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_(CTR)>)"

@@ -1,0 +1,39 @@
+columns:
+  - Name
+  - Executable
+  - Notes
+rows:
+  - Name: "[OpenSSL](https://www.openssl.org/)"
+    Executable: openssl
+    Notes: Jack-of-all-trades Toolbox - can handle MOST tasks
+  - Name: "[Java Keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/keytool.html)"
+    Executable: keytool
+    Notes: Was prominent when Java KeyStores were popular; largely OBE
+  - Name: "[SSH Keygen](https://www.ssh.com/academy/ssh/keygen)"
+    Executable: ssh-keygen
+    Notes: A popular wrapper to quickly and easily create ssh keys
+  - Name: "[PuTTYGen](https://www.putty.org/)"
+    Executable: puttygen
+    Notes: The Windows version cannot use cli flags; only the Linux package can
+  - Name: "[TestSSL.sh](http://testssl.sh/)"
+    Executable: testssl.sh
+    Notes: |-
+      Command line tool to test TLS servers for vulnerabilities, etc.
+      `Run via docker: docker run --rm -it drwetter/testssl.sh` **`remoteserver`**
+  - Name: "[Network Security Services](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS)"
+    Executable: |-
+      update-ca-certificates
+      (and others)
+    Notes: Mozilla-led project to provide common certificate capabilities, including Linux OS-level CA Certs
+  - Name: "[BSD Security](https://www.freebsd.org/cgi/man.cgi?security)"
+    Executable: security
+    Notes: BSD (and Mac OS) project that handles certificate management, including CA Certs
+  - Name: "[Certutil](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil)"
+    Executable: certutil
+    Notes: Windows command-line tool to manage certificates, CAs, etc.
+  - Name: "[Windows Certificate Manager](https://docs.microsoft.com/en-us/dotnet/framework/tools/certmgr-exe-certificate-manager-tool)"
+    Executable: certmgr
+    Notes: Windows MMC Snap-In UI to manage certificates
+  - Name: "[Certreq](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certreq_1)"
+    Executable: certreq
+    Notes: Windows command-line tool to request certificates

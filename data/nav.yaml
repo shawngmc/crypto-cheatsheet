@@ -1,0 +1,114 @@
+articles:
+  - title: Commands
+    id: commands
+    icon: terminal
+    code_column: true
+    sections:
+      - title: View Single Cert or Key
+        id: View-Single Cert or Key
+        table: commands/view-single-cert-or-key
+      - title: Convert Between Formats
+        id: Convert-Between Formats
+        table: commands/convert-between-formats
+      - title: View Bundle Contents
+        id: View-Bundle Contents
+        table: commands/view-bundle-contents
+      - title: Create Bundle
+        id: Create-Bundle
+        table: commands/create-bundle
+      - title: Import to Bundle
+        id: Import-to Bundle
+        table: commands/import-to-bundle
+      - title: Export from Bundle
+        id: Export-from Bundle
+        table: commands/export-from-bundle
+      - title: Copy Between Bundles
+        id: Copy-Between Bundles
+        table: commands/copy-between-bundles
+      - title: Delete from Bundle
+        id: Delete-from Bundle
+        table: commands/delete-from-bundle
+      - title: Create a Self-Signed CA
+        id: Create-a Self-Signed CA
+        table: commands/create-a-self-signed-ca
+      - title: Manage Local CAs
+        id: Manage-Local CAs
+        table: commands/manage-local-cas
+      - title: Revocation
+        id: Revocation
+        table: commands/revocation
+      - title: Generate Keys
+        id: Generate-Keys
+        table: commands/generate-keys
+      - title: Digest Signing
+        id: Digest-Signing
+        table: commands/digest-signing
+      - title: TLS Troubleshooting
+        id: TLS-Troubleshooting
+        table: commands/tls-troubleshooting
+      - title: Passphrase Management
+        id: Passphrase-Management
+        table: commands/passphrase-management
+      - title: Password Prompt / Generate
+        id: Password-Prompt / Generate
+        table: commands/password-prompt-generate
+  - title: Guides
+    id: guides
+    icon: signs-post
+    sections:
+      - title: Managing Sensitive Keys
+        id: Managing-Sensitive Keys
+        markdown: guides/managing_sensitive_keys.md
+      - title: Picking a Store Type
+        id: Picking-a Store Type
+        markdown: guides/picking_a_store_type.md
+  - title: Reference Tables
+    id: reference-tables
+    icon: table
+    sections:
+      - title: File Types
+        id: File-Types
+        table: reference-tables/file-types
+      - title: Object Types
+        id: Object-Types
+        table: reference-tables/object-types
+      - title: Tools
+        id: Tools
+        table: reference-tables/tools
+      - title: Hashing Algorithms
+        id: Hashing-Algorithms
+        table: reference-tables/hashing-algorithms
+      - title: Encryption Algorithms
+        id: Encryption-Algorithms
+        table: reference-tables/encryption-algorithms
+      - title: TLS Key Exchange
+        id: TLS-Key Exchange
+        table: reference-tables/tls-key-exchange
+      - title: TLS Cipher Suites
+        id: TLS-Cipher Suites
+        table: reference-tables/tls-cipher-suites
+      - title: TLS and SSL Versions
+        id: TLS-and SSL Versions
+        table: reference-tables/tls-and-ssl-versions
+      - title: Block Cipher Modes
+        id: Block-Cipher Modes
+        table: reference-tables/block-cipher-mode-of-operation
+      - title: Common Errors
+        id: Common-Errors
+        table: reference-tables/common-errors
+      - title: Key Usages
+        id: Key-Usages
+        table: reference-tables/key-usages
+      - title: Common Attacks
+        id: Common-Attacks
+        table: reference-tables/common-attacks
+      - title: Reference Links
+        id: Reference-Links
+        table: reference-tables/reference-links
+  - title: About
+    id: about
+    icon: circle-info
+    sections:
+      - title: Changelog
+        id: Changelog
+        markdown: about/changelog.md

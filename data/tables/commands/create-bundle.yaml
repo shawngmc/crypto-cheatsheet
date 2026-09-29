@@ -1,0 +1,22 @@
+columns:
+  - Type
+  - Operation
+  - Command
+rows:
+  - Type:
+      text: P12
+      rowspan: 2
+    Operation: Generate/Create
+    Command: keytool -genkey -alias **temp** -keystore **store.p12**
+  - Operation: Delete
+    Command: keytool -delete -alias **temp** -keystore **store.p12**
+  - Type:
+      text: JKS
+      rowspan: 2
+    Operation: Generate/Create
+    Command: keytool -genkey -alias **temp** -keystore **store.jks**
+  - Operation: Delete
+    Command: keytool -delete -alias **temp** -keystore **store.jks**
+  - Type: PEM (1x or Nx)
+    Operation: Create
+    Command: touch **store.pem**

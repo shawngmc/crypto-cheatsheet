@@ -1,0 +1,36 @@
+columns:
+  - Type
+  - Operation
+  - Command
+rows:
+  - Type: P12
+    Operation: Verify
+    Command: keytool -list -v -keystore **store.p12** -alias **alias**
+  - Type: JKS
+    Operation: Verify
+    Command: keytool -list -v -keystore **store.jks** -alias **alias**
+  - Type: PEM(Nx)
+    Operation: View
+    Command: "# PEM(Nx) -> PEM, Verify PEM"
+  - Type:
+      text: PEM
+      rowspan: 7
+    Operation: Verify Key
+    Command: openssl rsa -in **in.pem** -check
+  - Operation: Verify Cert
+    Command: openssl x509 -in **in.pem** -text
+  - Operation: Verify Cert Chain
+    Command: |-
+      # May fail if intermediate certs are not in your truststore
+      openssl verify -CAfile **cacerts.pem** **my.pem**
+  - Operation: Hash Cert
+    Command: openssl x509 -noout -modulus -in **incert.pem** | openssl md5
+  - Operation: Hash Key
+    Command: openssl rsa -noout -modulus -in **in.key** | openssl md5
+  - Operation: Correlate Key and Cert
+    Command: "# Hash Key and Cert, then compare hashes - if equal, they are correlated"
+  - Operation: Extract Public Key
+    Command: openssl x509 -pubkey -noout -in **incert.pem** -out **public.key**
+  - Type: DER
+    Operation: Verify Either
+    Command: keytool -printcert -v -file **in.der**

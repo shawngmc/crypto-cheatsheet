@@ -1,0 +1,30 @@
+columns:
+  - From
+  - To
+  - Operation
+  - Command
+rows:
+  - From: PEM
+    To: PEM(Nx)
+    Operation: Import via Merge
+    Command: cat **1.pem** >> **2.pem**
+  - From: PEM
+    To: P12
+    Operation: Import Cert and Key
+    Command: openssl pkcs12 -export -out **certificate.p12** -inkey **inkey.pem** -in **incert.pem** -certfile **CACert.pem**
+  - From: PEM
+    To: JKS
+    Operation: Import
+    Command: "# PEM -> DER -> JKS"
+  - From: DER
+    To: PEM(Nx)
+    Operation: Import
+    Command: "# DER -> PEM -> PEM"
+  - From: DER
+    To: P12
+    Operation: Import
+    Command: "# DER -> PEM -> P12"
+  - From: DER
+    To: JKS
+    Operation: Import
+    Command: keytool -import -alias **alias** -keystore **store.jks** -file **in.der**

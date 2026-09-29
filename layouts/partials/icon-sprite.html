@@ -1,0 +1,15 @@
+{{- /* Inline <symbol> defs for each article icon, from Font Awesome (mounted at assets/icons) */ -}}
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  {{- $icons := slice }}
+  {{- range hugo.Data.nav.articles }}{{ $icons = $icons | append .icon }}{{ end }}
+  {{- range uniq $icons }}
+  {{- $icon := . }}
+  {{- with resources.Get (printf "icons/%s.svg" $icon) }}
+  {{- $viewBox := index (findRESubmatch `viewBox="([^"]+)"` .Content 1) 0 1 }}
+  {{- $body := replaceRE `(?s)^.*?<svg[^>]*>(.*)</svg>\s*$` "$1" .Content }}
+  <symbol id="{{ $icon }}" viewBox="{{ $viewBox }}">{{ $body | safeHTML }}</symbol>
+  {{- else }}
+  {{- errorf "missing icon %q" $icon }}
+  {{- end }}
+  {{- end }}
+</svg>

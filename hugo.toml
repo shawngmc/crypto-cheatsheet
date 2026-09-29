@@ -1,0 +1,29 @@
+baseURL = "/"
+relativeURLs = true
+publishDir = "build"
+title = "Crypto Cheatsheet"
+disableKinds = ["page", "section", "taxonomy", "term", "RSS", "sitemap", "404", "robotsTXT"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+[markup.goldmark.extensions]
+  typographer = false
+  linkify = false
+  strikethrough = false
+
+[[module.mounts]]
+  source = "assets"
+  target = "assets"
+[[module.mounts]]
+  source = "node_modules/hint.css/hint.css"
+  target = "assets/css/hint.css"
+[[module.mounts]]
+  source = "node_modules/@fortawesome/fontawesome-free/svgs/solid"
+  target = "assets/icons"
+
+# Keep HTML unminified (as the Vite build did) so command-cell whitespace survives; CSS/JS are minified in templates
+[minify]
+  disableHTML = true
+
+[module.hugoVersion]
+  min = "0.156.0"

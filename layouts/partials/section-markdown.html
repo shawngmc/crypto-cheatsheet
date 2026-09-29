@@ -1,0 +1,5 @@
+{{- with resources.Get (printf "markdown/%s" .) }}
+{{- .Content | markdownify }}
+{{- else }}
+{{- errorf "missing markdown file %q" . }}
+{{- end }}

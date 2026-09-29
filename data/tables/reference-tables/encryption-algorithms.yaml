@@ -1,0 +1,149 @@
+columns:
+  - Identifier
+  - Algorithm Name
+  - Key Type
+  - Key Lengths
+  - Block Sizes
+  - Generally Secure
+  - References
+rows:
+  - Identifier: DSA
+    Algorithm Name: Digital Signature Algorithm
+    Key Type: Asymmetric
+    Key Lengths: "2048"
+    Block Sizes: ""
+    Generally Secure: No
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Digital_Signature_Algorithm)"
+  - Identifier: RSA
+    Algorithm Name: Rivest–Shamir–Adleman Cipher
+    Key Type: Asymmetric
+    Key Lengths: 1024-4096
+    Block Sizes: ""
+    Generally Secure: Yes
+    References: "[Wikipedia](<https://en.wikipedia.org/wiki/RSA_(cryptosystem)>)"
+  - Identifier: ECDSA (ECC)
+    Algorithm Name: Elliptic Curve Digital Signature Algorithm
+    Key Type: Asymmetric
+    Key Lengths: 256, 521
+    Block Sizes: ""
+    Generally Secure: Yes, if sufficiently random
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)"
+  - Identifier: AES
+    Algorithm Name: Advanced Encryption Standard (Rijndael)
+    Key Type: Symmetric
+    Key Lengths: 128, 192, 256
+    Block Sizes: "128"
+    Generally Secure: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)"
+  - Identifier: Salsa
+    Algorithm Name: Salsa (typically 20-round Salsa20)
+    Key Type: Symmetric
+    Key Lengths: 128, 256
+    Block Sizes: "512"
+    Generally Secure: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Salsa20)"
+  - Identifier: ChaCha
+    Algorithm Name: ChaCha (typically 20-round ChaCha20)
+    Key Type: Symmetric
+    Key Lengths: 128, 256
+    Block Sizes: "512"
+    Generally Secure: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Salsa20)"
+  - Identifier: DES
+    Algorithm Name: Data Encryption Standard
+    Key Type: Symmetric
+    Key Lengths: "56"
+    Block Sizes: "64"
+    Generally Secure: No
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Data_Encryption_Standard)"
+  - Identifier: 3DES
+    Algorithm Name: Triple Data Encryption Standard
+    Key Type: Symmetric
+    Key Lengths: 56, 112, 168
+    Block Sizes: "64"
+    Generally Secure: No - Meet-in-the-middle attack
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Triple_DES)"
+  - Identifier: Blowfish
+    Algorithm Name: Blowfish
+    Key Type: Symmetric
+    Key Lengths: 32-448
+    Block Sizes: "64"
+    Generally Secure: No
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Blowfish_%28cipher%29)"
+  - Identifier: Twofish
+    Algorithm Name: Twofish
+    Key Type: Symmetric
+    Key Lengths: 128, 192, 256
+    Block Sizes: "128"
+    Generally Secure: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Twofish)"
+  - Identifier: RC2
+    Algorithm Name: Rivest Cipher 2
+    Key Type: Symmetric
+    Key Lengths: 8-1024
+    Block Sizes: "64"
+    Generally Secure: No
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/RC2)"
+  - Identifier: RC4
+    Algorithm Name: Rivest Cipher 4
+    Key Type: Symmetric
+    Key Lengths: 40-2048
+    Block Sizes: ""
+    Generally Secure: No
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/RC4)"
+  - Identifier: RC5
+    Algorithm Name: Rivest Cipher 5
+    Key Type: Symmetric
+    Key Lengths: 0-2040
+    Block Sizes: 32, 64, 128
+    Generally Secure: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/RC5)"
+  - Identifier: RC6
+    Algorithm Name: Rivest Cipher 6
+    Key Type: Symmetric
+    Key Lengths: 128, 192, 256
+    Block Sizes: "128"
+    Generally Secure: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/RC6)"
+  - Identifier: ROT
+    Algorithm Name: Rotational Cipher
+    Key Type: Symmetric
+    Key Lengths: 4-16
+    Block Sizes: "1"
+    Generally Secure: No
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/ROT13)"
+  - Identifier: ROT13
+    Algorithm Name: Rotational Cipher (13 moves)
+    Key Type: Symmetric
+    Key Lengths: "4"
+    Block Sizes: "1"
+    Generally Secure: No
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/ROT13)"
+  - Identifier: Vigenere
+    Algorithm Name: Vigenere Cipher
+    Key Type: Symmetric
+    Key Lengths: Varies
+    Block Sizes: Varies
+    Generally Secure: No
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)"
+  - Identifier: SEED
+    Algorithm Name: SEED
+    Key Type: Symmetric
+    Key Lengths: "128"
+    Block Sizes: "128"
+    Generally Secure: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SEED)"
+  - Identifier: IDEA
+    Algorithm Name: International Data Encryption Algorithm
+    Key Type: Symmetric
+    Key Lengths: "128"
+    Block Sizes: "64"
+    Generally Secure: No - Weak Keys, Generally Obsolete
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/International_Data_Encryption_Algorithm)"
+  - Identifier: Camellia
+    Algorithm Name: Camellia
+    Key Type: Symmetric
+    Key Lengths: 128, 192, 256
+    Block Sizes: "128"
+    Generally Secure: Yes
+    References: "[Wikipedia](<https://en.wikipedia.org/wiki/Camellia_(cipher)>)"

@@ -1,0 +1,15 @@
+<article id="{{ .id }}">
+          <h2>{{ partial "icon.html" .icon }}{{ .title }}</h2>
+          {{- $codeColumn := .code_column }}
+          {{- range .sections }}
+          <section id="{{ .id }}">
+            <h3>{{ .title }}</h3>
+            {{- with .table }}
+            {{ partial "section-table.html" (dict "table" (index hugo.Data.tables (path.Dir .) (path.Base .)) "name" . "codeColumn" $codeColumn) }}
+            {{- end }}
+            {{- with .markdown }}
+            {{ partial "section-markdown.html" . }}
+            {{- end }}
+          </section>
+          {{- end }}
+        </article>

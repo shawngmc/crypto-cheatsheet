@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{- partial "head.html" . }}
+  </head>
+
+  <body>
+    {{- partial "icon-sprite.html" . }}
+    <div class="grid">
+      <nav>
+        <h1 id="logo-text">Crypto Cheatsheet</h1>
+        {{- range hugo.Data.nav.articles }}
+        <div class="nav-header">{{ partial "icon.html" .icon }}{{ .title }}</div>
+        {{- range .sections }}
+        <a class="nav-item" {{ printf "href=%q" (print "#" .id) | safeHTMLAttr }}>{{ .title }}</a>
+        {{- end }}
+        {{- end }}
+      </nav>
+      <main>
+        {{- range hugo.Data.nav.articles }}
+        {{ partial "article.html" . }}
+        {{- end }}
+      </main>
+    </div>
+    {{- $js := resources.Get "js/app.js" | js.Build (dict "minify" hugo.IsProduction) }}
+    <script>{{ $js.Content | safeJS }}</script>
+  </body>
+</html>

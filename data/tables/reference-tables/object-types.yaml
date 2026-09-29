@@ -1,0 +1,50 @@
+columns:
+  - Object Type
+  - What is it?
+  - PEM Header
+  - P12
+  - DER
+  - P7B
+  - JKS
+  - PPK
+rows:
+  - Object Type: Public Key
+    What is it?: A shareable key used to verify something signed with a Private Key
+    PEM Header: contains `-----BEGIN PUBLIC KEY-----`
+    P12: N
+    DER: Y
+    P7B: N
+    JKS: N
+    PPK: N
+  - Object Type: Private Key
+    What is it?: A key used to sign or encrypt; unless kept private, the signer can be impersonated
+    PEM Header: contains `-----BEGIN PRIVATE KEY-----`; may include algorithm
+    P12: Y
+    DER: Y
+    P7B: N
+    JKS: Y
+    PPK: Y
+  - Object Type: Certificate
+    What is it?: A public key with identifying information bundled with it
+    PEM Header: contains `-----BEGIN CERTIFICATE-----`
+    P12: Y
+    DER: Y
+    P7B: Y
+    JKS: Y
+    PPK: N
+  - Object Type: Signing Request
+    What is it?: A signed set of identifying information for a CA to send you a certificate of.
+    PEM Header: contains `-----BEGIN CERTIFICATE REQUEST-----`
+    P12: N
+    DER: Y
+    P7B: N
+    JKS: N
+    PPK: N
+  - Object Type: Revocation List
+    What is it?: A list of certificates that should not be trusted, typically due to leakage.
+    PEM Header: contains `-----BEGIN X509 CRL-----`
+    P12: N
+    DER: Y
+    P7B: N
+    JKS: N
+    PPK: N

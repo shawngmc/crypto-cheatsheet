@@ -1,0 +1,41 @@
+{{- /*
+  Renders a table from data/tables/<name>.yaml.
+  Each row maps column name -> cell; a cell is a string or {text, rowspan}.
+  Cells covered by a rowspan above are omitted from the row.
+  Normal cells are inline Markdown; each line renders separately and lines join with <br>.
+  The code column (last column when codeColumn is set) is plain text where only **bold** is markup.
+*/ -}}
+{{- $table := .table }}
+{{- if not $table }}{{ errorf "missing table data %q" .name }}{{ end }}
+{{- $codeColumn := .codeColumn }}
+{{- $last := sub (len $table.columns) 1 -}}
+<table>
+              <thead><tr>
+                {{- range $table.columns }}<th>{{ . | markdownify }}</th>{{ end -}}
+              </tr></thead>
+              <tbody>
+                {{- range $table.rows }}
+                {{- $row := . }}
+                <tr>
+                  {{- range $i, $col := $table.columns }}
+                  {{- if isset $row $col }}
+                  {{- $cell := index $row $col }}
+                  {{- $text := "" }}{{ $rowspan := 0 }}
+                  {{- if reflect.IsMap $cell }}{{ $text = $cell.text }}{{ $rowspan = $cell.rowspan }}{{ else }}{{ $text = $cell }}{{ end }}
+                  {{- $text = string $text }}
+                  {{- $isCode := and $codeColumn (eq $i $last) }}
+                  {{- $html := "" }}
+                  {{- if $isCode }}
+                    {{- $html = $text | htmlEscape | replaceRE `\*\*(.+?)\*\*` "<strong>$1</strong>" | replaceRE `\n` "<br>" }}
+                  {{- else }}
+                    {{- $lines := slice }}
+                    {{- range split $text "\n" }}{{ $lines = $lines | append (. | markdownify | string) }}{{ end }}
+                    {{- $html = delimit $lines "<br>" | replaceRE `<a href=` `<a target="_blank" rel="noreferrer" href=` }}
+                  {{- end }}
+                  <td{{ with $rowspan }} rowspan="{{ . }}"{{ end }}{{ if $isCode }} class="code-example"{{ end }}>{{ $html | safeHTML }}</td>
+                  {{- end }}
+                  {{- end }}
+                </tr>
+                {{- end }}
+              </tbody>
+            </table>

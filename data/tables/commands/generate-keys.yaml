@@ -1,0 +1,30 @@
+columns:
+  - Type
+  - Operation
+  - Command
+rows:
+  - Type:
+      text: RSA Private Key
+      rowspan: 2
+    Operation: Generate
+    Command: openssl genrsa -des3 -out **id_rsa** -passout pass:**mys3curep4$$w0rd** 2048
+  - Operation: Extract Public Key
+    Command: openssl rsa -in **id_rsa** -passin pass:**mys3curep4$$w0rd** -pubout -out **id_rsa.pub**
+  - Type: ECDSA Private Key
+    Operation: Generate
+    Command: openssl ecparam -out **id_ec** -name prime256v1 -genkey
+  - Type: Ed25519 SSH Private Key
+    Operation: Generate
+    Command: ssh-keygen -o -a 100 -t ed25519 -f **id_ed25519** -C "john@example.com"
+  - Type: Any SSH Private Key
+    Operation: Extract Public Key
+    Command: ssh-keygen -y -e -f **id_rsa**
+  - Type: PuTTY RSA Keypair
+    Operation: Generate
+    Command: puttygen -t rsa -o **out.ppk**
+  - Type: SSH Host Key Set
+    Operation: Generate
+    Command: |-
+      ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa
+      ssh-keygen -f /etc/ssh/ssh_host_dsa_key -N '' -t dsa # consider skipping
+      ssh-keygen -f /etc/ssh/ssh_host_ecdsa_key -N '' -t ecdsa -b 521

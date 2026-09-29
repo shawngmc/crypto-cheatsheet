@@ -1,0 +1,16 @@
+columns:
+  - Type
+  - Operation
+  - Command
+rows:
+  - Type: Basic TLS Handshake
+    Operation: |-
+      List Accepted CAs,
+      Confirm TLS
+    Command: openssl s_client -connect **remoteserver**:**443**
+  - Type: Test 2-way PKI
+    Operation: Handshake w/ Key/Cert
+    Command: openssl s_client -showcerts -cert **cert.pem** -key **key.pem** -CAfile **cacerts.pem** -connect **remoteserver**:443 -debug
+  - Type: Check TLS Vulns
+    Operation: List Ciphers, Attacks, etc.
+    Command: docker run --rm -it drwetter/testssl.sh **remoteserver**

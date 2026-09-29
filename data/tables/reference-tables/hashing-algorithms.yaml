@@ -1,0 +1,97 @@
+columns:
+  - Identifier
+  - Algorithm Name
+  - Digest Strengths
+  - Secure As of 2021-08-07
+  - References
+rows:
+  - Identifier: MD2
+    Algorithm Name: Message Digest Algorithm 2
+    Digest Strengths: "128"
+    Secure As of 2021-08-07: No
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/MD2)"
+  - Identifier: MD4
+    Algorithm Name: Message Digest Algorithm 4
+    Digest Strengths: "128"
+    Secure As of 2021-08-07: No
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/MD4)"
+  - Identifier: MD5
+    Algorithm Name: Message Digest Algorithm 5
+    Digest Strengths: "128"
+    Secure As of 2021-08-07: No
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/MD5)"
+  - Identifier: MD6
+    Algorithm Name: Message Digest Algorithm 6
+    Digest Strengths: 0-512
+    Secure As of 2021-08-07: Unverified
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/MD6)"
+  - Identifier: SHA-0
+    Algorithm Name: Secure Hash Algorithm 0
+    Digest Strengths: "160"
+    Secure As of 2021-08-07: No
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SHA-1#SHA-0)"
+  - Identifier: SHA-1
+    Algorithm Name: Secure Hash Algorithm 1
+    Digest Strengths: "160"
+    Secure As of 2021-08-07: No
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SHA-1)"
+  - Identifier: SHA-2
+    Algorithm Name: Secure Hash Algorithm 2
+    Digest Strengths: 224, 256, 384, 512
+    Secure As of 2021-08-07: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SHA-2)"
+  - Identifier: SHA-3
+    Algorithm Name: Secure Hash Algorithm 3
+    Digest Strengths: ""
+    Secure As of 2021-08-07: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SHA-3)"
+  - Identifier: SHA-224
+    Algorithm Name: Secure Hash Algorithm 2, 224-bit
+    Digest Strengths: "224"
+    Secure As of 2021-08-07: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SHA-2)"
+  - Identifier: SHA-256
+    Algorithm Name: Secure Hash Algorithm 2, 256-bit
+    Digest Strengths: "256"
+    Secure As of 2021-08-07: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SHA-2)"
+  - Identifier: SHA-384
+    Algorithm Name: Secure Hash Algorithm 2, 384-bit
+    Digest Strengths: "384"
+    Secure As of 2021-08-07: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SHA-2)"
+  - Identifier: SHA-512
+    Algorithm Name: Secure Hash Algorithm 2, 512-bit
+    Digest Strengths: "512"
+    Secure As of 2021-08-07: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SHA-2)"
+  - Identifier: SHA-512/224
+    Algorithm Name: Secure Hash Algorithm 2, 512-bit with 224-bit IV
+    Digest Strengths: 512 with 224 IV
+    Secure As of 2021-08-07: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SHA-2)"
+  - Identifier: SHA-512/256
+    Algorithm Name: Secure Hash Algorithm 2, 512-bit with 256-bit IV
+    Digest Strengths: 512 with 256 IV
+    Secure As of 2021-08-07: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SHA-2)"
+  - Identifier: SHA3-224
+    Algorithm Name: Secure Hash Algorithm 3, 224-bit
+    Digest Strengths: "224"
+    Secure As of 2021-08-07: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SHA-3)"
+  - Identifier: SHA3-256
+    Algorithm Name: Secure Hash Algorithm 3, 256-bit
+    Digest Strengths: "256"
+    Secure As of 2021-08-07: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SHA-3)"
+  - Identifier: SHA3-384
+    Algorithm Name: Secure Hash Algorithm 3, 384-bit
+    Digest Strengths: "384"
+    Secure As of 2021-08-07: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SHA-3)"
+  - Identifier: SHA3-512
+    Algorithm Name: Secure Hash Algorithm 3, 512-bit
+    Digest Strengths: "512"
+    Secure As of 2021-08-07: Yes
+    References: "[Wikipedia](https://en.wikipedia.org/wiki/SHA-3)"

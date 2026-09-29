@@ -1,0 +1,44 @@
+columns:
+  - App
+  - Error
+  - What does it mean?
+  - How to address?
+rows:
+  - App: Java
+    Error: "javax.net.ssl.SSLHandshakeException: Received fatal alert: bad_certificate"
+    What does it mean?: The server has rejected your cert for 2-way PKI authentication
+    How to address?: |-
+      Run the following commands to get info:
+      Server CA list: `openssl s_client -connect remoteserver:443`
+      (Look for "Acceptible cliend certificate CA names")
+      Client Cert CA (PEM w/chain): `openssl x509 -in my.pem -text`
+      (Look for "Issuer")
+      Then check:
+      1\) Ensure that the server accepts a cert signed by your cert's CA
+      2\) Ensure that your cert is within the validity dates
+      3\) Ensure that reverse DNS matches your cert's CN
+  - App: Java
+    Error: |-
+      javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException:
+      PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException:
+      unable to find valid certification path to requested target
+    What does it mean?: Your client cannot verify the server's certificate.
+    How to address?: |-
+      Disable certificate verification features (not recommended!)
+      OR
+      1\) Find the truststore for your application and make sure it's loaded.
+      This varies based on the application, but often involves the JVM setting javax.net.ssl.truststore - look in config files or use jvisualvm.
+      This will be a JKS or P12 store.
+      2\) Pull the cert from the server
+      `openssl s_client -connect` **`remoteserver:443`** `2>&1 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' >` **`server_cert.pem`**
+      3\) Check the dates
+      `openssl x509 -noout -in` **`server_cert.pem`** `-subject -dates`
+      4\) Check the subject
+      `openssl x509 -noout -in` **`server_cert.pem`** `-subject`
+      vs.
+      `nslookup` **`remoteserver`**
+      `nslookup` **`ip_addr_from_last_command`**
+      5\) Check that the issuer is in your truststore
+      `openssl x509 -noout -in` **`server_cert.pem`** `-issuer`
+      vs.
+      `keytool -list -v -keystore` **`truststore.p12`** `| grep "`**`CN OF THE ISSUER`**`"`

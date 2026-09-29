@@ -1,0 +1,51 @@
+columns:
+  - From
+  - To
+  - Operation
+  - Command
+rows:
+  - From:
+      text: PEM(Nx)
+      rowspan: 3
+    To:
+      text: PEM
+      rowspan: 3
+    Operation: Export via Split
+    Command: "# Use a text editor and save a new file"
+  - Operation: Cert-only csplit
+    Command: csplit --prefix='cert.' --suffix-format='%03d.pem' **multicert.pem** '/-----BEGIN CERTIFICATE-----/' '{*}'
+  - Operation: "[AWK Script](https://gist.github.com/jinnko/d6867ce326e8b6e88975)"
+    Command: |-
+      #!/usr/bin/awk -f
+      #
+      # Take a PEM format file as input and split out certs and keys into separate files
+      #
+
+      BEGIN                          { n=0; cert=0; key=0; if ( ARGC < 2 ) { print "Usage: pem-split FILENAME"; exit 1 } }
+      /-----BEGIN PRIVATE KEY-----/  { key=1; cert=0 }
+      /-----BEGIN CERTIFICATE-----/  { cert=1; key=0 }
+      split_after == 1               { n++; split_after=0 }
+      /-----END CERTIFICATE-----/    { split_after=1 }
+      /-----END PRIVATE KEY-----/    { split_after=1 }
+      key == 1                       { print > FILENAME "-" n ".key" }
+      cert == 1                      { print > FILENAME "-" n ".crt" }
+  - From: PEM(Nx)
+    To: DER
+    Operation: Export via Split
+    Command: "# PEM -> PEM -> DER"
+  - From: P12
+    To: PEM
+    Operation: Export
+    Command: "# P12 -> PEM -> PEM"
+  - From: P12
+    To: DER
+    Operation: Export
+    Command: keytool -export -alias **alias** -file **out.der** -keystore **store.p12**
+  - From: JKS
+    To: PEM
+    Operation: Export
+    Command: "# JKS -> P12 -> PEM -> PEM"
+  - From: JKS
+    To: DER
+    Operation: Export
+    Command: keytool -export -alias **alias** -file **out.der** -keystore **store.jks**

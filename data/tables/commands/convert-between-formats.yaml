@@ -1,0 +1,36 @@
+columns:
+  - From
+  - To
+  - Operation
+  - Command
+rows:
+  - From: PEM
+    To: DER
+    Operation: Convert
+    Command: openssl x509 -inform PEM -in **in.pem** -outform DER -out **out.der**
+  - From: DER
+    To: PEM
+    Operation: Convert
+    Command: openssl x509 -inform DER -in **in.der** -outform PEM -out **out.pem**
+  - From: P7B
+    To: PEM
+    Operation: Convert
+    Command: openssl pkcs7 -print_certs -in **in.p7b** -out **out.pem**
+  - From: |-
+      PEM
+      (Cert)
+    To: SSH Key
+    Operation: Convert and Place
+    Command: |-
+      openssl x509 -pubkey -noout -in **cert.pem** > **pubkey.pem**
+      rm /etc/ssh/*key*
+      ssh-keygen -f **pubkey.pem** -i -mPKCS8 > /etc/ssh/ssh_host_rsa_key.pub
+      cp **key.pem** /etc/ssh/ssh_host_rsa_key
+  - From: |-
+      PEM
+      (Cert)
+    To: |-
+      PEM
+      (Pub Key)
+    Operation: Extract Public Key
+    Command: openssl x509 -pubkey -noout -in **cert.pem** > **pubkey.pem**

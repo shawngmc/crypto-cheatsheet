@@ -1,0 +1,33 @@
+columns:
+  - Identifier
+  - Algorithm Name
+  - Generally Secure of 2019-06-29
+  - References
+rows:
+  - Identifier: TLS1.3
+    Algorithm Name: Transport Layer Security v1.3
+    Generally Secure of 2019-06-29: Yes
+    References:
+      text: "[Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security)"
+      rowspan: 8
+  - Identifier: TLS1.2
+    Algorithm Name: Transport Layer Security v1.2
+    Generally Secure of 2019-06-29: Yes, but only if tightly configured
+  - Identifier: TLS1.1
+    Algorithm Name: Transport Layer Security v1.1
+    Generally Secure of 2019-06-29: No, as no secure ciphers are guaranteed
+  - Identifier: TLS1.0
+    Algorithm Name: Transport Layer Security v1.0
+    Generally Secure of 2019-06-29: No
+  - Identifier: TLS
+    Algorithm Name: Transport Layer Security
+    Generally Secure of 2019-06-29: No, as it allows 1.0/1.1
+  - Identifier: SSLv3
+    Algorithm Name: Secure Sockets Layer v3
+    Generally Secure of 2019-06-29: No
+  - Identifier: SSLv2
+    Algorithm Name: Secure Sockets Layer v2
+    Generally Secure of 2019-06-29: No
+  - Identifier: SSL
+    Algorithm Name: Secure Sockets Layer
+    Generally Secure of 2019-06-29: No

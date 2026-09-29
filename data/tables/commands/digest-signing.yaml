@@ -1,0 +1,22 @@
+columns:
+  - Type
+  - Operation
+  - Command
+rows:
+  - Type: |-
+      PEM
+      (Private Key)
+    Operation: Create Signature File
+    Command: openssl dgst -sign **privkey.pem** -out **sigfile.sha256 datafile**
+  - Type: |-
+      PEM
+      (Private Key)
+    Operation: Check Signature via Private Key
+    Command: openssl dgst -prverify **privkey.pem** -signature **sigfile.sha256 datafile**
+  - Type: |-
+      PEM
+      (Public Key)
+    Operation: Check Signature via Public Key
+    Command: |-
+      # This MUST be a public key, not a cert, or you will receive a "unable to load key file" error
+      openssl dgst -verify **pubkey.pem** -signature **sigfile.sha256 datafile**

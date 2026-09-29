@@ -1,0 +1,14 @@
+columns:
+  - Type
+  - Operation
+  - Command
+rows:
+  - Type: PEM(Nx)
+    Operation: Change Passphrase
+    Command: "# PEM(Nx) -> PEM, Change Passphrase, Re-merge"
+  - Type: PEM
+    Operation: Change Passphrase
+    Command: |-
+      openssl rsa -des3 -in **id_rsa** -out **id_rsa.new**
+      # OR
+      ssh-keygen -p -f **id_rsa**

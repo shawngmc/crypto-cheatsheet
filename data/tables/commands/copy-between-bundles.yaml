@@ -1,0 +1,88 @@
+columns:
+  - From
+  - To
+  - Operation
+  - Command
+rows:
+  - From:
+      text: PEM(Nx)
+      rowspan: 3
+    To:
+      text: P12
+      rowspan: 3
+    Operation: Convert
+    Command: openssl pkcs12 -export -out **store.p12** -in **in.pem**
+  - Operation: Import to Existing
+    Command: openssl pkcs12 -export -out **newstore.p12** -in **in.pem**
+  - Operation: Build a full-chain P12
+    Command: |-
+      cat **cacerts.pem cert.pem** >> **merged.pem**
+      openssl pkcs12 -export -inkey **key.pem** -in **merged.pem** -name **myname** -out **mergedWithKey.pem**
+  - From:
+      text: PEM(Nx)
+      rowspan: 2
+    To:
+      text: JKS
+      rowspan: 2
+    Operation: Convert
+    Command: "# PEM -> P12 -> JKS"
+  - Operation: Import to Existing
+    Command: "# PEM -> P12 -> JKS"
+  - From:
+      text: P12
+      rowspan: 2
+    To:
+      text: PEM(Nx)
+      rowspan: 2
+    Operation: Convert
+    Command: openssl pkcs12 -in **in**.p12 -out **newstore.pem**
+  - Operation: Import to Existing
+    Command: openssl pkcs12 -in **in**.p12 >> **store.pem**
+  - From:
+      text: P12
+      rowspan: 3
+    To:
+      text: JKS
+      rowspan: 3
+    Operation: Convert
+    Command: keytool -importkeystore -srckeystore **in.p12** -srcstoretype PKCS12 -destkeystore **newstore.jks** -deststoretype JKS
+  - Operation: Import All to Existing
+    Command: keytool -importkeystore -srckeystore **in.p12** -srcstoretype PKCS12 -destkeystore **store.jks** -deststoretype JKS
+  - Operation: Import One to Existing
+    Command: keytool -importkeystore -srckeystore **in.p12** -srcstoretype PKCS12 -srcalias **alias** -destkeystore **store.jks** -deststoretype JKS
+  - From:
+      text: JKS
+      rowspan: 3
+    To:
+      text: P12
+      rowspan: 3
+    Operation: Convert
+    Command: keytool -importkeystore -srckeystore **in.jks** -srcstoretype JKS -destkeystore **newstore.p12** -deststoretype PKCS12
+  - Operation: Import All to Existing
+    Command: keytool -importkeystore -srckeystore **in**.**jks** -srcstoretype JKS -destkeystore **store.p12** -deststoretype PKCS12
+  - Operation: Import One to Existing
+    Command: keytool -importkeystore -srckeystore **in.jks** -srcstoretype JKS -srcalias **alias** -destkeystore **store.p12** -deststoretype PKCS12
+  - From:
+      text: JKS
+      rowspan: 2
+    To:
+      text: PEM(Nx)
+      rowspan: 2
+    Operation: Convert
+    Command: "# JKS -> P12 -> PEM"
+  - Operation: Import to Existing
+    Command: "# JKS -> P12 -> PEM"
+  - From:
+      text: PPK
+      rowspan: 2
+    To:
+      text: PEM
+      rowspan: 2
+    Operation: Extract Public Key
+    Command: puttygen **in.ppk** -o **cert.pem** -O public
+  - Operation: Extract Private Key
+    Command: puttygen **in.ppk** -o **key.pem** -O private-openssh
+  - From: PEM(Nx)
+    To: PPK
+    Operation: Convert
+    Command: puttygen **inkey.pem** -o **out.ppk** -O private
